@@ -49,6 +49,11 @@
 	            <h1 class="gallery-title">media_comment</h1>
 	        </div>
 	        
+	        <div class="user_btn" align="center">
+	        	<button type="button">회원가입</button>
+	        	<button type="button">로그인</button>
+	        </div>
+	        
 	        <div class="main_search" align="center">
 	        	<form>
 					<input type="text" size="80">
