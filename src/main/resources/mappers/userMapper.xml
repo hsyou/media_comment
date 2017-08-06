@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.project.media_comment.mapper.userMapper">
+	
+	<select id="getUser" resultType="UserVO"><!-- resultType 은 domain클래스명을 쓰면 자동연결-->
+		select * from USER where user_id=#{user_id}
+	</select>
+	<select id="login" resultType="int">
+		SELECT user_id
+		FROM USER
+		WHERE user_email=#{user_email} AND user_password=#{user_password}
+	</select>
+
+	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
+	<insert id="createAccount">
+		INSERT INTO user(user_email,user_password) VALUES(#{user_email},#{user_password})
+	</insert>
+</mapper>
