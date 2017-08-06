@@ -4,19 +4,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.project.media_comment.mapper.videoMapper">
-	
+
 	<select id="getVideo" resultType="org.project.media_comment.domain.VideoVO">
 
 		select video_id,video_title,user_id,video_post_date,video_code,video_hit,video_content from video where video_id=#{video_id}
 
 	</select>
-
 	<select id="listAllVideo" resultType="org.project.media_comment.domain.VideoVO">
 
 		select * from video;
 	</select>
 
-	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
 	<insert id="uploadVideo">
 		INSERT INTO video(video_title,user_id,video_code,video_content) VALUES(#{video_title},#{user_id},#{video_code},#{video_content})
 	</insert>
@@ -25,4 +23,3 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE video SET video_hit=video_hit+1 WHERE video_id=#{video_id}
 	</update>
 </mapper>
-

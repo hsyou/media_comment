@@ -14,5 +14,3 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO reply(user_id,video_id,reply_playtime,reply_content) VALUES(#{user_id},#{video_id},#{reply_playtime},#{reply_content})
 	</insert>
 </mapper>
-
-x

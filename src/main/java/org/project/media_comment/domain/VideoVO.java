@@ -61,10 +61,4 @@ public class VideoVO {
 	public VideoVO() {
 	}
 
-	@Override
-	public String toString() {
-		return "VideoVO [video_id=" + video_id + ", video_title=" + video_title + ", user_id=" + user_id
-				+ ", video_post_date=" + video_post_date + ", video_code=" + video_code + ", video_content="
-				+ video_content + ", video_hit=" + video_hit + "]";
-	}
 }
