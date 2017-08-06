@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by hs on 2017-07-22.
@@ -30,5 +31,15 @@ public class VideoDAOImpl implements VideoDAO{
     @Override
     public VideoVO getVideo(int video_id) throws Exception {
         return session.selectOne(namespace+".getVideo",video_id);
+    }
+
+    @Override
+    public List<VideoVO> listAllVideo() throws Exception {
+        return session.selectList(namespace+".listAllVideo");
+    }
+
+    @Override
+    public void increaseHit(int video_id) throws Exception {
+        session.update(namespace+".increaseHit",video_id);
     }
 }

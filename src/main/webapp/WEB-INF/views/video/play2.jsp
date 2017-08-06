@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
          pageEncoding="UTF-8" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,7 +45,7 @@
             width: 100%;
         }
 
-        #reply_content {
+        #frm_reply {
             margin: 10px;
         }
 
@@ -83,15 +82,17 @@
         </div>
     </div>
 
-    ${videoVO.video_code}
+    <iframe width="854" height="480" id="player" src="https://www.youtube.com/embed/JGwWNGJdvx8?enablejsapi=1"
+            frameborder="0"
+            allowfullscreen></iframe>
 
     <div class="panel panel-default">
         <div class="panel-body row">
             <span id="tag">#Ed Sheeran #뮤비 #pop</span>
             <h1>${videoVO.video_title}</h1>
-            <h3>${videoVO.user_id}</h3>
+            <h3>Ed Sheeran 공식 계정</h3>
             <div class="pull-right">
-                <span>  ${videoVO.video_hit} &nbsp;
+                <span>  조회수 100,230 회 &nbsp;
                     좋아요 3,321 개</span>
 
             </div>
@@ -100,50 +101,54 @@
 
     <div class="panel panel-default">
         <div class="panel-body row">
-            <form method="post" action="/video/reply" id="frm_reply">
-                <h4><input type="text" name="user_id" placeholder="유저아이디 (숫자)"/></h4>
-                <span id="p_time"></span>&nbsp;&nbsp;
-                <input type="hidden" id="reply_playtime" name="reply_playtime"/>
-                <input type="hidden" name="video_id" value="${videoVO.video_id}">
-                <button type="button" class="btn btn-default" onclick="refresh()"><span
-                        class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-    
-                <textarea class="form-control" rows="3" id="reply_content" name="reply_content"></textarea>
-                <div class="pull-right">
-                    <button type="submit" class="btn btn-primary">등록</button>
-                </div>
-            </form>
+            <h4>yhs1020</h4>
+            <span id="p_time"></span>&nbsp;&nbsp;
+            <button type="button" class="btn btn-default" onclick="refresh()"><span
+                    class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+
+            <textarea class="form-control" rows="3" id="frm_reply" name="frm_content"></textarea>
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary">등록</button>
+            </div>
         </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-body">
 
-
-            <c:forEach var="reply" items="${list}">
             <div class="div_reply row">
-                <h4>${reply.user_id}</h4>
-                <a onclick="seek(${reply.reply_playtime})">${reply.reply_playtime}</a>
-                <p> ${reply.reply_content}</p>
+                <h4>yhs1020</h4>
+                <a onclick="seek(68)">01:08</a>
+                <p> 아프겠다 ㅋㅋㅋㅋ</p>
                 <div class="pull-right">
-                    <button type="button" class="btn btn-default" id="thumb_up"><i class="fa fa-thumbs-o-up"></i></button>
-                    <button type="button" class="btn btn-default" id="thumb_down"><i class="fa fa-thumbs-o-down"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-up"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-down"></i></button>
                 </div>
             </div>
             <hr>
-            </c:forEach>
+            <div class="div_reply row">
+                <h4>abcd342</h4>
+                <a onclick="seek(200)">03:20</a>
+                <p>!!! 혐 주의 !!!</p>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-up"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-down"></i></button>
+                </div>
+            </div>
+            <hr>
+            <div class="div_reply row">
+                <h4>ediee1</h4>
+                <a onclick="seek(120)">02:00</a>
+                <p>뭐하는거죠?</p>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-up"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-thumbs-o-down"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <script>
-        $(function () {
-            console.log("document ready");
-            var src=document.getElementById('player').src;
-            src+='?enablejsapi=1';
-            document.getElementById('player').src=src;
-            console.log("player : "+src);
-        })
-        
         var player;
         //api ready
         function onYouTubeIframeAPIReady() {
@@ -151,23 +156,6 @@
             var offset = $("#player").offset();
             $("#float_reply").offset = ({left: offset.left + 200, top: offset.top + 100});
             $("#float_reply").hide();
-
-
-            //리플 띄울시간 계산 (예제)
-//            setInterval(function () {
-//                var time = Math.floor(player.getCurrentTime());
-//                if (time == 68) {
-//                    $("#float_reply").text("아프겠다 ㅋㅋㅋㅋ");
-//                    showReply();
-//                } else if (time == 200) {
-//                    $("#float_reply").text("!!! 혐 주의 !!!");
-//                    showReply();
-//                } else if (time == 120) {
-//                    $("#float_reply").text("뭐하는거죠?");
-//                    showReply();
-//                }
-//
-//            }, 100);
         }
 
         //댓글 입력 플래그
@@ -180,7 +168,7 @@
         }
 
         //댓글 입력시 현재 재생시간 띄우기
-        $("#reply_content").keydown(function () {
+        $("#frm_reply").keydown(function () {
             var time = player.getCurrentTime();
             if (flag == 0) {
                 $("#p_time").text(Math.floor(time));
@@ -188,6 +176,21 @@
             }
         });
 
+        //리플 띄울시간 계산 (예제)
+        setInterval(function () {
+            var time = Math.floor(player.getCurrentTime());
+            if (time == 68) {
+                $("#float_reply").text("아프겠다 ㅋㅋㅋㅋ");
+                showReply();
+            } else if (time == 200) {
+                $("#float_reply").text("!!! 혐 주의 !!!");
+                showReply();
+            } else if (time == 120) {
+                $("#float_reply").text("뭐하는거죠?");
+                showReply();
+            }
+
+        }, 100);
 
         //리플 5초간 띄우기
         function showReply() {
@@ -204,26 +207,6 @@
             player.pauseVideo();
             $('html, body').animate({scrollTop: offset.top - 60}, 400);
         }
-        
-        //리플 등록
-        $("#frm_reply").submit(function(){
-            var playtime=$("#p_time").text();
-            $("#reply_playtime").val(playtime);
-            return true;
-        });
-
-        //추천
-        $('#thumb_up').on('click',function(){
-
-            //ajax
-
-        });
-        //비추
-        $('#thumb_down').on('click',function(){
-
-            //ajax
-
-        });
     </script>
     <script src="https://www.youtube.com/iframe_api"></script>
 

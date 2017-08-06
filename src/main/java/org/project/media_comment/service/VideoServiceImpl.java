@@ -5,6 +5,8 @@ import org.project.media_comment.persistence.VideoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by hs on 2017-07-22.
  */
@@ -23,10 +25,13 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public VideoVO getVideo(int video_id) throws Exception {
-//        return videoDAO.getVideo(video_id);
-    	System.out.println(videoDAO.getVideo(video_id));
-    	
-    	return videoDAO.getVideo(video_id);
-    	
+        videoDAO.increaseHit(video_id);
+        return videoDAO.getVideo(video_id);
     }
+
+    @Override
+    public List<VideoVO> listAllVideo() throws Exception {
+        return videoDAO.listAllVideo();
+    }
+
 }

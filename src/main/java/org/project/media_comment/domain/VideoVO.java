@@ -58,6 +58,9 @@ public class VideoVO {
 		this.video_hit = video_hit;
 	}
 
+	public VideoVO() {
+	}
+
 	@Override
 	public String toString() {
 		return "VideoVO [video_id=" + video_id + ", video_title=" + video_title + ", user_id=" + user_id

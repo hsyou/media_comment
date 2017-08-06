@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,10 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- bootstrap -->
-<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"
 	type="text/javascript"></script>
-<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <title>영상 업로드</title>
 <style>
 .col-centered {
@@ -28,7 +28,7 @@ iframe{
 </head>
 <body>
 	<div class="col-md-6 col-md-offset-3 main_frame">
-		<form method="post" class="form-horizontal	">
+		<form method="post" class="form-horizontal" id="frm_upload">
 
 			<div class="form-group">
 				<label for="user_id" class="col-sm-2 control-label">유저아이디 (임의, 숫자)</label>
@@ -63,7 +63,7 @@ iframe{
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">업로드</button>
+					<button type="submit" class="btn btn-default" >업로드</button>
 				</div>
 			</div>
 
@@ -76,6 +76,14 @@ iframe{
 </body>
 
 <script type="text/javascript">
+
+	$("#frm_upload").submit(function(){
+	    var src=$("#video_url").val();
+	    src=src.replace('></iframe>',' id="player"></iframe>');
+	    $("#video_url").val(src);
+	    return true;
+	});
+
 	$('#video_url').on('change', function() {
 		var src = $(this).val();
 		if (src.startsWith("<iframe") || src.startsWith("<embed"))
