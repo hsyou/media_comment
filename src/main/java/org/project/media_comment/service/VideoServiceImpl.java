@@ -23,6 +23,10 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public VideoVO getVideo(int video_id) throws Exception {
-        return videoDAO.getVideo(video_id);
+//        return videoDAO.getVideo(video_id);
+    	System.out.println(videoDAO.getVideo(video_id));
+    	
+    	return videoDAO.getVideo(video_id);
+    	
     }
 }

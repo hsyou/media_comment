@@ -8,6 +8,5 @@
     <package name="org.project.media_comment.domain"/>
   </typeAliases>
 
-
 </configuration>
 

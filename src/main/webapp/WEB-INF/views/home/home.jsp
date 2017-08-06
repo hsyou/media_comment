@@ -69,7 +69,29 @@
 	            <button class="btn btn-default filter-button" data-filter="irrigation">	축구				</button>
 	        </div>
         	<br/>
-
+        	
+			
+            <c:forEach items="${list }" var="vo" varStatus="status">
+            	<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+            		<div> video_code : ${vo.video_code }</div>
+            		
+            		<a href="video/play" target="_black">
+            			<img alt="동영상" src="https://img.youtube.com/vi/${vo.video_code }/hqdefault.jpg" width="480" height="270">
+            		</a>
+            		
+            		<div>
+	                	<span>동영상 제목 : ${vo.video_title }</span>
+	                </div>
+	                <div>
+	                	<span>업로드한 사람 / </span>
+	                	<span>좋아요 수</span>
+	                </div>
+	                <div>
+	                	<span>조회수 / </span>
+	                	<span>업로드 날짜</span>
+	                </div>
+            	</div>
+            </c:forEach>
 
             <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
                 <!-- <img src="http://fakeimg.pl/365x365/" class="img-responsive"> 640/360-->
