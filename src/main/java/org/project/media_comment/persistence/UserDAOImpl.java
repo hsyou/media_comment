@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public int login(UserVO vo) throws Exception {
+    public UserVO login(UserVO vo) throws Exception {
         return session.selectOne(namespace+".login",vo);
     }
 }

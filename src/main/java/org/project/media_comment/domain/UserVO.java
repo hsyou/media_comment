@@ -11,6 +11,8 @@ public class UserVO {
     private String user_email;
     private String user_password;
 
+    public UserVO() {} // VO 만들때 default생성자는 항상 만들어줘야한다.
+
     public int getUser_id() {
         return user_id;
     }
@@ -22,8 +24,6 @@ public class UserVO {
     public void setUser_email(String user_email) {
         this.user_email = user_email;
     }
-
-    public UserVO() {} // VO 만들때 default생성자는 항상 만들어줘야한다.
 
     public String getUser_password() {
         return user_password;

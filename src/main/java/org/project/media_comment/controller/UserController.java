@@ -1,17 +1,16 @@
 package org.project.media_comment.controller;
 
 import org.project.media_comment.domain.UserVO;
-import org.project.media_comment.domain.VideoVO;
 import org.project.media_comment.service.UserService;
-import org.project.media_comment.service.VideoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Handles requests for the application home page.
@@ -33,36 +32,49 @@ public class UserController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "user/Sign_up";
+		return "/user/login";
 	}
+
 	//user정보등록 페이지로 이동하는 메소드
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String getResister(Model model) { return "user/Sign_up"; } // 회원가입 페이지로 이동,
+	@RequestMapping(value = "/", method = RequestMethod.GET) // 질문 ( value = "/" 라고 표시한 이유는? )
+	public String getResister(Model model) { return "user/sign_up"; } // 회원가입 페이지로 이동,
 
-	//이 위 두개는 classic한 포맷
-
-	//login 기능에서 id 리턴값이 0이면 실패했다는 처리를 해주고, 아이디가 나오면
 
 	//model 도 jsp에 데이터 전달하는 운반체이다
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model){
+	@RequestMapping(value = "/login", method = RequestMethod.GET) //요청 URL을 어떤 메서드가 처리할지 여부를 결정하는 것이 “@RequestMapping“
+
+	public String loginGet(Model model){
+
 		return "user/login";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(UserVO vo, Model model){
-		int result = 0;
+	public String login(UserVO vo, Model model, HttpSession session){
+		UserVO result = new UserVO();
+		String returnurl="";
 		try{
 			result = UserService.login(vo);
 			//미완성
-			if(result == 0){
-				logger.info("fail");
+			if(result == null){
+
+				logger.info("fail-=-==--=-=-=-==-=-=-=-=-=-");
+				returnurl= "user/login";
+
 			}else {
+
 				logger.info("success");
+				//session
+
+				model.addAttribute("user_id", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
+				returnurl= "home";
+
 			}
 		}catch (Exception e){
+
 			e.printStackTrace();
+
 		}
-		return "user/Login";
+
+		return returnurl;
 	}
 }

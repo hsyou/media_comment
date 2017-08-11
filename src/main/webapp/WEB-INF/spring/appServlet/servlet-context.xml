@@ -20,16 +20,30 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+
+	<!--Login Interceptor config -->
+	<beans:bean id = "authInterceptor" class="org.project.media_comment.interceptor.AuthInterceptor"></beans:bean>
+	<beans:bean id = "loginInterceptor" class="org.project.media_comment.interceptor.LoginInterceptor"></beans:bean>
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/login"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		<!--여기 아래에 이제 로그인 인터셉터가 필요한 페이지들을 추가해주면 됨. -->
+		<interceptor>
+			<mapping path="/home/"/>
+			<beans:ref bean ="authInterceptor"/>
+		</interceptor>
+	</interceptors>
 	
 	<context:component-scan base-package="org.project.media_comment.controller" />
-	
-	
+
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/resources/css/" />
-	<resources mapping="/fonts/**" location="/resources/fonts/" />
+	<!--<resources mapping="/fonts/**" location="/resources/fonts/" />-->
 	<resources mapping="/img/**" location="/resources/img/" />
-	<resources mapping="/js/**" location="/resources/js/" />
-	<resources mapping="/less/**" location="/resources/less/" />
-	<resources mapping="/vendor/**" location="/resources/vendor/" />
+	<!--<resources mapping="/js/**" location="/resources/js/" />-->
+	<!--<resources mapping="/less/**" location="/resources/less/" />-->
+	<!--<resources mapping="/vendor/**" location="/resources/vendor/" />-->
 	
 </beans:beans>

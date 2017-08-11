@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service // 빈(bean 이거 스프링 프레임웍 용어임)으로 등록해주는 어노테이션(Service는 서비스전용 어노테이션)
 public class UserServiceImpl implements UserService{
 
-    @Autowired
+    @Autowired // 외부에서 class 객체 생성해서 자동으로 인젝션 해준다.
     private UserDAO userDAO;
 
     @Override
@@ -20,12 +20,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public int login(UserVO vo) throws Exception {
-        int result = 0;
+    public UserVO login(UserVO vo) throws Exception {
 
-        result = userDAO.login(vo);
-
-        return result;
+        return userDAO.login(vo);
     }
 
     @Override

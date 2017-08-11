@@ -9,6 +9,6 @@ public interface UserService {
     //    void createAccount(UserVO vo);
     public void createAccount(UserVO vo)throws Exception;
     public UserVO getUser(int user_id)throws Exception;
-    public int login(UserVO vo)throws Exception;
+    public UserVO login(UserVO vo)throws Exception;
 
 }

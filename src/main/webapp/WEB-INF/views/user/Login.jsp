@@ -11,7 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <!-- CSS -->
+
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
     <link rel="stylesheet" href="/resources/assets/reset.css">
     <link rel="stylesheet" href="/resources/assets/supersized.css">
@@ -21,11 +23,11 @@
 
 <div class="page-container">
     <h1>Commentube</h1>
-    <form action="" method="post">
-        <input type="text" name="ID" class="username" placeholder="ID">
+    <form action="/user/login" method="post">
+        <input type="text" name="user_email" class="username" placeholder="ID">
         <input type="password" name="password" class="password" placeholder="Password">
-        <button type="submit" onclick="location.href='main.html'">Login</button>
-        <button type="button" onclick="location.href='Sign_in.html'">Sign in</button>
+        <button type="submit">Sign in</button>
+        <button type="button" onclick="location.href='sign_up.html'">Sign up</button>
         <div class="error"><span>+</span></div>
     </form>
 </div>
