@@ -50,7 +50,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(UserVO vo, Model model, HttpSession session){
-		UserVO result = new UserVO();
+		UserVO result = null;
 		String returnurl="";
 		try{
 			result = UserService.login(vo);
@@ -65,7 +65,6 @@ public class UserController {
 				logger.info("success");
 				//session
 
-				model.addAttribute("user_id", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
 				returnurl= "home";
 
 			}
@@ -74,6 +73,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		model.addAttribute("userVO", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
 
 		return returnurl;
 	}

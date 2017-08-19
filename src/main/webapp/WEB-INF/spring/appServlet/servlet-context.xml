@@ -31,7 +31,9 @@
 		</interceptor>
 		<!--여기 아래에 이제 로그인 인터셉터가 필요한 페이지들을 추가해주면 됨. -->
 		<interceptor>
+
 			<mapping path="/home/"/>
+			<mapping path="/video/upload"/>
 			<beans:ref bean ="authInterceptor"/>
 		</interceptor>
 	</interceptors>

@@ -15,23 +15,23 @@ public class UserDAOImpl implements UserDAO{
 
 
     @Autowired
-    private SqlSession session; //마이바티스 불러오는 호출문(Autowired 가 bean에서 SqlSession이 외부 라이브러리인데, context 확인해봐라
+    private SqlSession sqlSession; //마이바티스 불러오는 호출문(Autowired 가 bean에서 SqlSession이 외부 라이브러리인데, context 확인해봐라
 
     //mapper 네임스페이스
     private static String namespace = "org.project.media_comment.mapper.userMapper";
 
     @Override
     public void createAccount(UserVO vo) throws Exception {
-        session.insert(namespace+".createAccount", vo);
+        sqlSession.insert(namespace+".createAccount", vo);
     }
 
     @Override
     public UserVO getUser(int user_id) throws Exception {
-        return session.selectOne(namespace+".getUser", user_id);
+        return sqlSession.selectOne(namespace+".getUser", user_id);
     }
 
     @Override
     public UserVO login(UserVO vo) throws Exception {
-        return session.selectOne(namespace+".login",vo);
+        return sqlSession.selectOne(namespace+".login",vo);
     }
 }
