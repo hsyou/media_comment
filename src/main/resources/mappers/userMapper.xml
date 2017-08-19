@@ -15,7 +15,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
+
+
 	<insert id="createAccount">
-		INSERT INTO users(user_email,user_password) VALUES(#{user_email},#{user_password})
+		INSERT INTO users(user_email,user_password,user_exp,user_nickname) VALUES(#{user_email},#{user_password},#{user_exp},#{user_nickname})
 	</insert>
 </mapper>

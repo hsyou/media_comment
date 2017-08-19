@@ -10,6 +10,24 @@ public class UserVO {
     private int user_id;
     private String user_email;
     private String user_password;
+    private int user_exp;
+    private String user_nickname;
+
+    public int getUser_exp() {
+        return user_exp;
+    }
+
+    public void setUser_exp(int user_exp) {
+        this.user_exp = user_exp;
+    }
+
+    public String getUser_nickname() {
+        return user_nickname;
+    }
+
+    public void setUser_nickname(String user_nickname) {
+        this.user_nickname = user_nickname;
+    }
 
     public UserVO() {} // VO 만들때 default생성자는 항상 만들어줘야한다.
 
