@@ -1,8 +1,10 @@
 package org.project.media_comment.persistence;
 
 import org.apache.ibatis.session.SqlSession;
+import org.project.media_comment.domain.ReplyCountVO;
 import org.project.media_comment.domain.ReplyVO;
-import org.project.media_comment.domain.VideoVO;
+import org.project.media_comment.domain.ReplyVoteVO;
+import org.project.media_comment.domain.VideoUserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +15,7 @@ import java.util.List;
  */
 
 @Repository
-public class ReplyDAOImpl implements ReplyDAO{
+public class ReplyDAOImpl implements ReplyDAO {
 
 
     @Autowired
@@ -28,7 +30,32 @@ public class ReplyDAOImpl implements ReplyDAO{
     }
 
     @Override
+    public List<ReplyVO> listAllReplyLogin(VideoUserVO vo) throws Exception {
+        return session.selectList(namespace+".listAllReplyLogin",vo);
+    }
+
+    @Override
     public void insertReply(ReplyVO vo) throws Exception {
         session.insert(namespace+".insertReply",vo);
+    }
+
+    @Override
+    public Integer selectReplyVote(ReplyVoteVO vo) throws Exception {
+        return session.selectOne(namespace+".selectReplyVote",vo);
+    }
+
+    @Override
+    public void voteReply(ReplyVoteVO vo) throws Exception {
+        session.insert(namespace+".voteReply",vo);
+    }
+
+    @Override
+    public void updateReplyVote(int reply_vote_flag) throws Exception {
+        session.update(namespace+".updateReplyVote",reply_vote_flag);
+    }
+
+    @Override
+    public void updateReplyCount(ReplyCountVO vo) throws Exception {
+        session.update(namespace+".updateReplyCount",vo);
     }
 }

@@ -1,5 +1,6 @@
+<%@ page import="org.project.media_comment.domain.UserVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,15 +28,11 @@ iframe{
 </style>
 </head>
 <body>
+<%  UserVO vo=(UserVO)session.getAttribute("login");%>
 	<div class="col-md-6 col-md-offset-3 main_frame">
 		<form method="post" class="form-horizontal" id="frm_upload">
 
-			<div class="form-group">
-				<label for="user_id" class="col-sm-2 control-label">유저아이디 (임의, 숫자)</label>
-				<div class="col-sm-10">
-					<input type="text" id="user_id" class="form-control" name="user_id"/>
-				</div>
-			</div>
+					<input type="hidden" value="<%=vo.getUser_id()%>" name="user_id"/>
 
 			<div class="form-group">
 				<label for="video_title" class="col-sm-2 control-label">제목</label>
@@ -56,9 +53,9 @@ iframe{
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="video_url" class="col-sm-2 control-label">영상주소</label>
+				<label for="video_code" class="col-sm-2 control-label">영상주소(주소만 입력)</label>
 				<div class="col-sm-10">
-					<input type="text" id="video_url" class="form-control" name="video_url"/>
+					<input type="text" id="video_code" class="form-control" name="video_code"/>
 				</div>
 			</div>
 			<div class="form-group">
@@ -68,8 +65,12 @@ iframe{
 			</div>
 
 			<div class="form-group">
-				<label for="video_url" class="col-sm-2 control-label">미리보기</label>
-				<div class="col-sm-10" id="div_preview"></div>
+				<label for="video_code" class="col-sm-2 control-label">미리보기</label>
+				<div class="col-sm-10" id="div_preview">
+					<iframe width="854" height="480" id="player" src=""
+							frameborder="0"
+							allowfullscreen></iframe>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -77,19 +78,11 @@ iframe{
 
 <script type="text/javascript">
 
-	$("#frm_upload").submit(function(){
-	    var src=$("#video_url").val();
-	    src=src.replace('></iframe>',' id="player"></iframe>');
-	    $("#video_url").val(src);
-	    return true;
-	});
-
-	$('#video_url').on('change', function() {
+	$('#video_code').on('change', function() {
 		var src = $(this).val();
-		if (src.startsWith("<iframe") || src.startsWith("<embed"))
-			$('#div_preview').html(src);
-		else
-			$('#div_preview').html('<div class="alert alert-danger" role="alert">잘못된 주소입니다</div>');
+
+		$('#player').attr('src','https://www.youtube.com/embed/'+src);
+
 	})
 </script>
 </html>

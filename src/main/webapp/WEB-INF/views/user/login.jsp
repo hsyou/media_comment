@@ -1,6 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-
 
 <!DOCTYPE html>
 
@@ -25,9 +25,9 @@
     <h1>Commentube</h1>
     <form action="/user/login" method="post">
         <input type="text" name="user_email" class="username" placeholder="ID">
-        <input type="password" name="password" class="password" placeholder="Password">
+        <input type="password" name="user_password" class="password" placeholder="Password">
         <button type="submit">Sign in</button>
-        <button type="button" onclick="location.href='sign_up.html'">Sign up</button>
+        <button type="button" onclick="location.href='/user/'">Sign up</button>
         <div class="error"><span>+</span></div>
     </form>
 </div>

@@ -1,11 +1,13 @@
 package org.project.media_comment.persistence;
 
 import org.apache.ibatis.session.SqlSession;
+import org.project.media_comment.domain.VideoCountVO;
+import org.project.media_comment.domain.VideoUserVO;
 import org.project.media_comment.domain.VideoVO;
+import org.project.media_comment.domain.VideoVoteVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.inject.Inject;
 import java.util.List;
 
 /**
@@ -13,7 +15,7 @@ import java.util.List;
  */
 
 @Repository
-public class VideoDAOImpl implements VideoDAO{
+public class VideoDAOImpl implements VideoDAO {
 
 
     @Autowired
@@ -34,6 +36,11 @@ public class VideoDAOImpl implements VideoDAO{
     }
 
     @Override
+    public VideoVO getVideoLogin(VideoUserVO vo) throws Exception {
+        return session.selectOne(namespace+".getVideoLogin",vo);
+    }
+
+    @Override
     public List<VideoVO> listAllVideo() throws Exception {
         return session.selectList(namespace+".listAllVideo");
     }
@@ -41,5 +48,25 @@ public class VideoDAOImpl implements VideoDAO{
     @Override
     public void increaseHit(int video_id) throws Exception {
         session.update(namespace+".increaseHit",video_id);
+    }
+
+    @Override
+    public Integer selectVideoVote(VideoVoteVO vo) throws Exception {
+        return session.selectOne(namespace+".selectVideoVote",vo);
+    }
+
+    @Override
+    public void voteVideo(VideoVoteVO vo) throws Exception {
+        session.insert(namespace+".voteVideo",vo);
+    }
+
+    @Override
+    public void updateVideoVote(int video_vote_flag) throws Exception {
+        session.update(namespace+".updateVideoVote",video_vote_flag);
+    }
+
+    @Override
+    public void updateVideoCount(VideoCountVO vo) throws Exception {
+        session.update(namespace+".updateVideoCount",vo);
     }
 }

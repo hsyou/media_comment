@@ -1,7 +1,9 @@
 package org.project.media_comment.persistence;
 
+import org.project.media_comment.domain.ReplyCountVO;
 import org.project.media_comment.domain.ReplyVO;
-import org.project.media_comment.domain.VideoVO;
+import org.project.media_comment.domain.ReplyVoteVO;
+import org.project.media_comment.domain.VideoUserVO;
 
 import java.util.List;
 
@@ -11,6 +13,11 @@ import java.util.List;
 public interface ReplyDAO {
 
     public List<ReplyVO> listAllReply(int video_id)throws Exception;
+    public List<ReplyVO> listAllReplyLogin(VideoUserVO vo)throws Exception;
     public void insertReply(ReplyVO vo)throws Exception;
+    public Integer selectReplyVote(ReplyVoteVO vo)throws Exception;
+    public void voteReply(ReplyVoteVO vo)throws Exception;
+    public void updateReplyVote(int reply_vote_flag)throws Exception;
+    public void updateReplyCount(ReplyCountVO vo)throws Exception;
 
 }

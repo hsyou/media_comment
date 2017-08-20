@@ -32,7 +32,7 @@ public class UserController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "/user/login";
+		return "user/login";
 	}
 
 	//user정보등록 페이지로 이동하는 메소드
@@ -50,22 +50,19 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(UserVO vo, Model model, HttpSession session){
-		UserVO result = new UserVO();
+		UserVO result=new UserVO();
 		String returnurl="";
 		try{
-			result = UserService.login(vo);
+			result= UserService.login(vo);
 			//미완성
-			if(result == null){
+			if(result == null){//로그인 실패
 
-				logger.info("fail-=-==--=-=-=-==-=-=-=-=-=-");
 				returnurl= "user/login";
-
-			}else {
+			}else {//성공
 
 				logger.info("success");
 				//session
 
-				model.addAttribute("user_id", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
 				returnurl= "home";
 
 			}
@@ -74,6 +71,7 @@ public class UserController {
 			e.printStackTrace();
 
 		}
+		model.addAttribute("userVO", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
 
 		return returnurl;
 	}

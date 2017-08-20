@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@
     <form method="post">
         <input type="text" name="user_email" class="username" placeholder="ID">
         <input type="password" name="user_password" class="password" placeholder="Password">
-        <input type="password" name="user_password" class="password" placeholder="Password">
+        <input type="password" name="user_password2" class="password" placeholder="Password">
 
         <button type="submit">Sign up</button>
         <div class="error"><span>+</span></div>

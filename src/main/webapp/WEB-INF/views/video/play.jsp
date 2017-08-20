@@ -1,6 +1,10 @@
+<%@ page import="org.project.media_comment.domain.UserVO" %>
+<%@ page import="org.springframework.security.core.userdetails.User" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -69,31 +73,61 @@
         #tag {
             color: #2a803d;
         }
-        #float_reply{
-            font-weight:bold;
+
+        #float_reply {
+            font-weight: bold;
 
         }
     </style>
 </head>
 <body style="background-color:#9da6a9">
+<%UserVO vo = (UserVO) session.getAttribute("login");%>
 <div class="col-md-6 col-md-offset-3 main_frame">
     <div class="panel panel-default">
         <div class="panel-body row">
             <span id="float_reply"></span>
         </div>
     </div>
+    <iframe width="854" height="480" id="player" src="https://www.youtube.com/embed/${videoVO.video_code}?enablejsapi=1"
+            frameborder="0"
+            allowfullscreen></iframe>
 
-    ${videoVO.video_code}
 
     <div class="panel panel-default">
         <div class="panel-body row">
             <span id="tag">#Ed Sheeran #뮤비 #pop</span>
             <h1>${videoVO.video_title}</h1>
             <h3>${videoVO.user_id}</h3>
+                <h3>  조회수 : ${videoVO.video_hit}회</h3>
             <div class="pull-right">
-                <span>  ${videoVO.video_hit} &nbsp;
-                    좋아요 3,321 개</span>
 
+                <%if (vo != null) {%>
+                <input type="hidden" class="user_id" value="<%=vo.getUser_id()%>">
+                <input type="hidden" class="video_id" value="${videoVO.video_id}">
+                <button type="button"
+                        <c:choose>
+                            <c:when test="${videoVO.video_vote_flag eq 1}">class="btn btn-primary video_thumb_up"</c:when>
+                            <c:otherwise>class="btn btn-default video_thumb_up"</c:otherwise>
+                        </c:choose>><i class="fa fa-thumbs-o-up"></i>
+                </button>
+                <span class="like_count">${videoVO.video_like_count}</span>
+                <button type="button"
+                        <c:choose>
+                            <c:when test="${videoVO.video_vote_flag eq -1}">class="btn btn-primary video_thumb_down"</c:when>
+                            <c:otherwise>class="btn btn-default video_thumb_down"</c:otherwise>
+                        </c:choose>><i class="fa fa-thumbs-o-down"></i></button>
+                <span class="dislike_count">${videoVO.video_dislike_count}</span>
+                <input type="hidden" class="reply_id" value="${videoVO.video_id}">
+
+                <%} else {%>
+                <button type="button" class="btn btn-default video_thumb_up" disabled><i
+                        class="fa fa-thumbs-o-up"></i>
+                </button>
+                <span class="like_count">${videoVO.video_like_count}</span>
+                <button type="button" class="btn btn-default video_thumb_down" disabled><i
+                        class="fa fa-thumbs-o-down"></i></button>
+                <span class="dislike_count">${videoVO.video_dislike_count}</span>
+                <%}%>
             </div>
         </div>
     </div>
@@ -101,17 +135,26 @@
     <div class="panel panel-default">
         <div class="panel-body row">
             <form method="post" action="/video/reply" id="frm_reply">
-                <h4><input type="text" name="user_id" placeholder="유저아이디 (숫자)"/></h4>
                 <span id="p_time"></span>&nbsp;&nbsp;
                 <input type="hidden" id="reply_playtime" name="reply_playtime"/>
                 <input type="hidden" name="video_id" value="${videoVO.video_id}">
                 <button type="button" class="btn btn-default" onclick="refresh()"><span
                         class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-    
+
+                <%
+                    if (vo != null) {
+                %>
                 <textarea class="form-control" rows="3" id="reply_content" name="reply_content"></textarea>
                 <div class="pull-right">
+                    <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">
                     <button type="submit" class="btn btn-primary">등록</button>
-                </div>
+                        <%}else{%>
+                    <textarea class="form-control" rows="3" id="reply_content" name="reply_content"
+                              readonly>로그인이 필요합니다</textarea>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary" disabled>등록</button>
+                        <%}%>
+                    </div>
             </form>
         </div>
     </div>
@@ -120,31 +163,47 @@
 
 
             <c:forEach var="reply" items="${list}">
-            <div class="div_reply row">
-                <h4>${reply.user_id}</h4>
-                <a onclick="seek(${reply.reply_playtime})">${reply.reply_playtime}</a>
-                <p> ${reply.reply_content}</p>
-                <div class="pull-right">
-                    <button type="button" class="btn btn-default" id="thumb_up"><i class="fa fa-thumbs-o-up"></i></button>
-                    <button type="button" class="btn btn-default" id="thumb_down"><i class="fa fa-thumbs-o-down"></i></button>
+                <div class="div_reply row">
+                    <h4>${reply.user_id}</h4>
+                    <a onclick="seek(${reply.reply_playtime})">${reply.reply_playtime}</a>
+                    <p> ${reply.reply_content}</p>
+                    <div class="pull-right">
+                        <%if (vo != null) {%>
+                        <input type="hidden" class="user_id" value="<%=vo.getUser_id()%>">
+                        <button type="button"
+                                <c:choose>
+                                    <c:when test="${reply.reply_vote_flag eq 1}">class="btn btn-primary thumb_up"</c:when>
+                                    <c:otherwise>class="btn btn-default thumb_up"</c:otherwise>
+                                </c:choose>><i class="fa fa-thumbs-o-up"></i>
+                        </button>
+                        <span class="like_count">${reply.reply_like_count}</span>
+                        <button type="button"
+                                <c:choose>
+                                    <c:when test="${reply.reply_vote_flag eq -1}">class="btn btn-primary thumb_down"</c:when>
+                                    <c:otherwise>class="btn btn-default thumb_down"</c:otherwise>
+                                </c:choose>><i class="fa fa-thumbs-o-down"></i></button>
+                        <span class="dislike_count">${reply.reply_dislike_count}</span>
+                        <input type="hidden" class="reply_id" value="${reply.reply_id}">
+                        <%} else {%>
+                        <button type="button" class="btn btn-default thumb_up" disabled><i
+                                class="fa fa-thumbs-o-up"></i>
+                        </button>
+                        <span class="like_count">${reply.reply_like_count}</span>
+                        <button type="button" class="btn btn-default thumb_down" disabled><i
+                                class="fa fa-thumbs-o-down"></i></button>
+                        <span class="dislike_count">${reply.reply_dislike_count}</span>
+                        <%}%>
+                    </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
             </c:forEach>
         </div>
     </div>
 
 
     <script>
-        $(function () {
-            console.log("document ready");
-            var src=document.getElementById('player').src;
-            src+='?enablejsapi=1';
-            document.getElementById('player').src=src;
-            console.log("player : "+src);
-        })
-        
         var player;
+
         //api ready
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player');
@@ -204,25 +263,159 @@
             player.pauseVideo();
             $('html, body').animate({scrollTop: offset.top - 60}, 400);
         }
-        
+
         //리플 등록
-        $("#frm_reply").submit(function(){
-            var playtime=$("#p_time").text();
+        $("#frm_reply").submit(function () {
+            var playtime = $("#p_time").text();
             $("#reply_playtime").val(playtime);
             return true;
         });
 
-        //추천
-        $('#thumb_up').on('click',function(){
+        //영상 추천
+        $('.video_thumb_up').on('click', function () {
 
-            //ajax
+            var id = $(this).siblings('.user_id').val();
+            var video_id = $(this).siblings('.video_id').val();
+            var params = {"user_id": id, "video_id": video_id, "video_vote_flag": "1"};
+
+            console.log("id ,video,vote"+id+video_id);
+            var btn = $(this);
+            $.ajax({
+                url: '/video/vote',
+                type: 'POST',
+                data: params,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (result) {
+                    console.log("result : "+result);
+                    var like_count = btn.siblings(".like_count");
+                    var dislike_count = btn.siblings(".dislike_count");
+                    switch (result) {
+                        case "2"://dislike->like
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".video_thumb_down").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) + 1);
+                            dislike_count.text(parseInt(dislike_count.text()) - 1);
+                            break;
+                        case "1"://default->like
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".video_thumb_down").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) + 1);
+                            break;
+                        default://like 취소
+                            btn.removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) - 1);
+                            break;
+                    }
+                }
+            });
+
+        });
+        //영상 비추
+        $('.video_thumb_down').on('click', function () {
+
+            var id = $(this).siblings('.user_id').val();
+            var video_id = $(this).siblings('.video_id').val();
+            var params = {"user_id": id, "video_id": video_id, "video_vote_flag": "-1"};
+            var btn = $(this);
+            $.ajax({
+                url: '/video/vote',
+                type: 'POST',
+                data: params,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (result) {
+                    var like_count = btn.siblings(".like_count");
+                    var dislike_count = btn.siblings(".dislike_count");
+                    switch (result) {
+                        case "-2"://like->dislike
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".video_thumb_up").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) - 1);
+                            dislike_count.text(parseInt(dislike_count.text()) + 1);
+                            break;
+                        case "-1"://default->dislike
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".video_thumb_up").removeClass("btn-primary").addClass("btn-default");
+                            dislike_count.text(parseInt(dislike_count.text()) + 1);
+                            break;
+                        default://dislike 취소
+                            btn.removeClass("btn-primary").addClass("btn-default");
+                            dislike_count.text(parseInt(dislike_count.text()) - 1);
+                            break;
+                    }
+                }
+            });
+        });
+
+        //추천
+        $('.thumb_up').on('click', function () {
+
+            var id = $(this).siblings('.user_id').val();
+            var reply_id = $(this).siblings('.reply_id').val();
+            var params = {"user_id": id, "reply_id": reply_id, "reply_vote_flag": "1"};
+            var btn = $(this);
+            $.ajax({
+                url: '/video/reply/vote',
+                type: 'POST',
+                data: params,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (result) {
+                    var like_count = btn.siblings(".like_count");
+                    var dislike_count = btn.siblings(".dislike_count");
+                    switch (result) {
+                        case "2"://dislike->like
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".thumb_down").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) + 1);
+                            dislike_count.text(parseInt(dislike_count.text()) - 1);
+                            break;
+                        case "1"://default->like
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".thumb_down").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) + 1);
+                            break;
+                        default://like 취소
+                            btn.removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) - 1);
+                            break;
+                    }
+                }
+            });
 
         });
         //비추
-        $('#thumb_down').on('click',function(){
+        $('.thumb_down').on('click', function () {
 
-            //ajax
-
+            var id = $(this).siblings('.user_id').val();
+            var reply_id = $(this).siblings('.reply_id').val();
+            var params = {"user_id": id, "reply_id": reply_id, "reply_vote_flag": "-1"};
+            var btn = $(this);
+            $.ajax({
+                url: '/video/reply/vote',
+                type: 'POST',
+                data: params,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (result) {
+                    var like_count = btn.siblings(".like_count");
+                    var dislike_count = btn.siblings(".dislike_count");
+                    switch (result) {
+                        case "-2"://like->dislike
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".thumb_up").removeClass("btn-primary").addClass("btn-default");
+                            like_count.text(parseInt(like_count.text()) - 1);
+                            dislike_count.text(parseInt(dislike_count.text()) + 1);
+                            break;
+                        case "-1"://default->dislike
+                            btn.removeClass("btn-default").addClass("btn-primary");
+                            btn.siblings(".thumb_up").removeClass("btn-primary").addClass("btn-default");
+                            dislike_count.text(parseInt(dislike_count.text()) + 1);
+                            break;
+                        default://dislike 취소
+                            btn.removeClass("btn-primary").addClass("btn-default");
+                            dislike_count.text(parseInt(dislike_count.text()) - 1);
+                            break;
+                    }
+                }
+            });
         });
     </script>
     <script src="https://www.youtube.com/iframe_api"></script>

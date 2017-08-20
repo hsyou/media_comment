@@ -24,14 +24,17 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         ModelMap modelMap = modelAndView.getModelMap();
         Object userVO = modelMap.get("userVO");
 
-        if(userVO != null){
+        if(userVO != null){//로그인데이터가 있으면
             logger.info("new login success");
             session.setAttribute(LOGIN,userVO);
 //            response.sendRedirect("/");
             Object dest = session.getAttribute("dest");
 
+            System.out.println(dest+" dest =======");
+
             response.sendRedirect(dest != null ? (String)dest : "/");
         }
+
 
         super.postHandle(request, response, handler, modelAndView);
     }
@@ -39,14 +42,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle( HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        System.out.print(request.getParameter("user_id"));
+//        System.out.print(request.getParameter("userVO"));
         HttpSession session = request.getSession();
 
         if(session.getAttribute(LOGIN) != null){
             logger.info("clear login data before");
             session.removeAttribute(LOGIN);
         }
-//            response.sendRedirect("/user/login");
 
 
         return super.preHandle(request, response, handler);

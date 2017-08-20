@@ -14,6 +14,9 @@ public class VideoVO {
     private String video_code;
     private String video_content;
     private int video_hit;
+    private int video_like_count;
+    private int video_dislike_count;
+    private int video_vote_flag;
 	
     public int getVideo_id() {
 		return video_id;
@@ -56,6 +59,30 @@ public class VideoVO {
 	}
 	public void setVideo_hit(int video_hit) {
 		this.video_hit = video_hit;
+	}
+
+	public int getVideo_like_count() {
+		return video_like_count;
+	}
+
+	public void setVideo_like_count(int video_like_count) {
+		this.video_like_count = video_like_count;
+	}
+
+	public int getVideo_dislike_count() {
+		return video_dislike_count;
+	}
+
+	public void setVideo_dislike_count(int video_dislike_count) {
+		this.video_dislike_count = video_dislike_count;
+	}
+
+	public int getVideo_vote_flag() {
+		return video_vote_flag;
+	}
+
+	public void setVideo_vote_flag(int video_vote_flag) {
+		this.video_vote_flag = video_vote_flag;
 	}
 
 	public VideoVO() {

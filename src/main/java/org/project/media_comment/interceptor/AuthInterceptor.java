@@ -22,6 +22,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
         if(session.getAttribute("login") == null){
             logger.info("current user is not logined");
+            saveDest(request);
             response.sendRedirect("/user/login");
 
             return false;
@@ -47,6 +48,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         //session 에 dest를 담아둠
         if(req.getMethod().equals("GET")){
             logger.info("dest: " + (uri + query));
+            req.getSession().setAttribute("dest",(uri + query));
         }
     }
 }
