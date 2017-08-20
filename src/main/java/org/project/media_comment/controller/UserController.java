@@ -50,7 +50,7 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(UserVO vo, Model model, HttpSession session){
-		UserVO result=new UserVO();
+		UserVO result = null;
 		String returnurl="";
 		try{
 			result= UserService.login(vo);

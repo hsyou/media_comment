@@ -113,7 +113,7 @@ public class VideoController {
 	@ResponseBody
 	public String voteVideo(@RequestParam("user_id")int user_id,@RequestParam("video_id")int video_id,
 							@RequestParam("video_vote_flag")int video_vote_flag){
-		int result=0; 	
+		int result=0;
 		try {
 			result=service.voteVideo(new VideoVoteVO(video_id,user_id,video_vote_flag));
 		}catch (Exception e){
