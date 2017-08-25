@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.project.media_comment.mapper.userMapper">
-	
+
 	<select id="getUser" resultType="UserVO"><!-- resultType 은 domain클래스명을 쓰면 자동연결-->
 		select * from USERS where user_id=#{user_id}
 	</select>
@@ -18,6 +18,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<insert id="createAccount">
-		INSERT INTO users(user_email,user_password) VALUES(#{user_email},#{user_password})
+		INSERT INTO users(user_email,user_password,user_nickname) VALUES(#{user_email},#{user_password},#{user_nickname})
 	</insert>
+
+	<select id="checkId"
+			parameterType="org.project.media_comment.domain.UserVO"
+			resultType="java.lang.Integer">
+		SELECT NVL(count(*),0)
+		FROM users WHERE user_email = #{user_email};
+	</select>
 </mapper>
