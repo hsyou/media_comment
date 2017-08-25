@@ -49,7 +49,6 @@ public class VideoController {
 
 		}catch (Exception e){
 			e.printStackTrace();
-			//에러 발생시 error page로 (미구현)
 		}
 
 		return "home";
