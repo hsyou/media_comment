@@ -27,6 +27,7 @@
 <div>
     <form method="post">
         <input type="text" name="user_email" class="username" placeholder="ID">
+        <input type="text" name="user_nickname" class="usernickname" placeholder="NICKNAME">
         <input type="password" name="user_password" class="password" placeholder="Password">
         <input type="password" name="user_password2" class="password" placeholder="Password">
 

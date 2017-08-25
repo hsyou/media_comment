@@ -7,8 +7,9 @@ import org.project.media_comment.domain.VideoVO;
  * Created by hs on 2017-07-22.
  */
 public interface UserDAO {
-    public void createAccount(UserVO vo)throws Exception;
-    public UserVO getUser(int user_id)throws Exception;
-    public UserVO login(UserVO vo)throws Exception;
+    void createAccount(UserVO vo)throws Exception;
+    UserVO getUser(int user_id)throws Exception;
+    UserVO login(UserVO vo)throws Exception;
+    Integer checkID(String user_email)throws Exception;
 
 }

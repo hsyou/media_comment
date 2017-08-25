@@ -29,4 +29,9 @@ public class UserServiceImpl implements UserService{
     public UserVO getUser(int user_id) throws Exception {
         return userDAO.getUser(user_id);
     }
+
+    @Override
+    public Integer checkID(String user_email) throws Exception {
+        return userDAO.checkID(user_email);
+    }
 }

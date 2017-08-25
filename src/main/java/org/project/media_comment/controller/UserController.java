@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
@@ -42,9 +43,7 @@ public class UserController {
 
 	//model 도 jsp에 데이터 전달하는 운반체이다
 	@RequestMapping(value = "/login", method = RequestMethod.GET) //요청 URL을 어떤 메서드가 처리할지 여부를 결정하는 것이 “@RequestMapping“
-
 	public String loginGet(Model model){
-
 		return "user/login";
 	}
 
@@ -74,5 +73,15 @@ public class UserController {
 		model.addAttribute("userVO", result); // modelMap 에 키값이랑 value 넣어주는거랑 같다고보면됨.
 
 		return returnurl;
+	}
+	@RequestMapping(value = "/checkId", method = {RequestMethod.POST})
+	public @ResponseBody int idCheck(String user_email,Model model) {
+		int result = 0;
+		try {
+			result = UserService.checkID(user_email);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

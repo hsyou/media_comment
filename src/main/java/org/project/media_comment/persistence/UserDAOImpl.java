@@ -21,6 +21,11 @@ public class UserDAOImpl implements UserDAO{
     private static String namespace = "org.project.media_comment.mapper.userMapper";
 
     @Override
+    public Integer checkID(String user_email) throws Exception {
+        return sqlSession.selectOne(namespace+".checkID", user_email);
+    }
+
+    @Override
     public void createAccount(UserVO vo) throws Exception {
         sqlSession.insert(namespace+".createAccount", vo);
     }
