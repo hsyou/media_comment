@@ -21,9 +21,8 @@ public class VideoServiceImpl implements VideoService {
     private VideoDAO videoDAO;
 
     @Override
-    public void uploadVideo(VideoVO vo) throws Exception {
-        videoDAO.uploadVideo(vo);
-
+    public int uploadVideo(VideoVO vo) throws Exception {
+        return videoDAO.uploadVideo(vo);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class VideoServiceImpl implements VideoService {
         if(user_id==0){
             return videoDAO.getVideo(video_id);
         }
-        return videoDAO.getVideoLogin(new VideoUserVO(video_id,user_id));
+        return videoDAO.getVideoLogin(new VideoUserVO(user_id,video_id));
     }
 
     @Override

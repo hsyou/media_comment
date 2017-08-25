@@ -25,8 +25,10 @@ public class VideoDAOImpl implements VideoDAO {
     private static String namespace = "org.project.media_comment.mapper.videoMapper";
 
     @Override
-    public void uploadVideo(VideoVO vo) throws Exception {
+    public int uploadVideo(VideoVO vo) throws Exception {
+
         session.insert(namespace+".uploadVideo",vo);
+        return vo.getVideo_id(); //return auto generated key
         //결과적으로 org.project.media_comment.mapper.videoMapper의 uploadVideo를 실행.
     }
 

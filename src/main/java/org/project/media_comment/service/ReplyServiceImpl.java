@@ -24,7 +24,7 @@ public class ReplyServiceImpl implements ReplyService {
         if(user_id==0){
             return replyDAO.listAllReply(video_id);
         }
-            return replyDAO.listAllReplyLogin(new VideoUserVO(video_id,user_id));
+            return replyDAO.listAllReplyLogin(new VideoUserVO(user_id,video_id));
 
     }
 

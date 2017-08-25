@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from video;
 	</select>
 
-	<insert id="uploadVideo">
+	<insert id="uploadVideo" keyProperty="video_id" useGeneratedKeys="true">
 		INSERT INTO video(video_title,user_id,video_code,video_content) VALUES(#{video_title},#{user_id},#{video_code},#{video_content})
 	</insert>
 

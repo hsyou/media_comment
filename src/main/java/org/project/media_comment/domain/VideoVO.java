@@ -17,6 +17,7 @@ public class VideoVO {
     private int video_like_count;
     private int video_dislike_count;
     private int video_vote_flag;
+    private String hashtag;
 	
     public int getVideo_id() {
 		return video_id;
@@ -83,6 +84,14 @@ public class VideoVO {
 
 	public void setVideo_vote_flag(int video_vote_flag) {
 		this.video_vote_flag = video_vote_flag;
+	}
+
+	public String getHashtag() {
+		return hashtag;
+	}
+
+	public void setHashtag(String hashtag) {
+		this.hashtag = hashtag;
 	}
 
 	public VideoVO() {

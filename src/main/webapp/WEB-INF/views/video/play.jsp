@@ -95,7 +95,7 @@
 
     <div class="panel panel-default">
         <div class="panel-body row">
-            <span id="tag">#Ed Sheeran #뮤비 #pop</span>
+            <span id="tag"><c:forEach var="hash" items="${hash}"><a href="#">#${hash.hashtag}</a>&nbsp;</c:forEach></span>
             <h1>${videoVO.video_title}</h1>
             <h3>${videoVO.user_id}</h3>
                 <h3>  조회수 : ${videoVO.video_hit}회</h3>

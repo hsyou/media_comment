@@ -43,7 +43,7 @@ iframe{
 			<div class="form-group">
 				<label for="video_tag" class="col-sm-2 control-label">태그</label>
 				<div class="col-sm-10">
-					<input type="text" id="video_tag" class="form-control" name="video_tag"/>
+					<input type="text" id="video_tag" class="form-control" name="hashtag"/>
 				</div>
 			</div>
 			<div class="form-group">
@@ -84,5 +84,7 @@ iframe{
 		$('#player').attr('src','https://www.youtube.com/embed/'+src);
 
 	})
+
+
 </script>
 </html>

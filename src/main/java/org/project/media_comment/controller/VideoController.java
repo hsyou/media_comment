@@ -2,6 +2,7 @@ package org.project.media_comment.controller;
 
 import org.apache.http.HttpRequest;
 import org.project.media_comment.domain.*;
+import org.project.media_comment.service.HashtagService;
 import org.project.media_comment.service.ReplyService;
 import org.project.media_comment.service.VideoService;
 import org.slf4j.Logger;
@@ -28,6 +29,8 @@ public class VideoController {
 	private VideoService service;
 	@Autowired
 	private ReplyService replyService;
+	@Autowired
+	private HashtagService hashtagService;
 
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
 	public String upload(Model model) {
@@ -41,11 +44,11 @@ public class VideoController {
 			HttpSession session=req.getSession();
 			UserVO uvo=(UserVO)session.getAttribute("login");
 			vo.setUser_id(uvo.getUser_id());
-			service.uploadVideo(vo);
+			int id=service.uploadVideo(vo);
+			hashtagService.insertHashtag(new HashtagVO(id,vo.getHashtag()));
 
 		}catch (Exception e){
 			e.printStackTrace();
-
 			//에러 발생시 error page로 (미구현)
 		}
 
@@ -67,6 +70,10 @@ public class VideoController {
 			//영상
 			VideoVO videoVO=service.getVideo(video_id,user_id);
 			if(videoVO!=null) model.addAttribute(videoVO);
+
+			//태그
+			List<HashtagVO> hashlist=hashtagService.listHashtag(video_id);
+			if(hashlist!=null)	model.addAttribute("hash",hashlist);
 
 		}catch (Exception e){
 			e.printStackTrace();
