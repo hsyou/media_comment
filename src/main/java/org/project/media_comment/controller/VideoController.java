@@ -54,6 +54,7 @@ public class VideoController {
 		return "home";
 	}
 
+	//video_id 영상 가져오기
 	@RequestMapping(value = "/{video_id}", method = RequestMethod.GET)
 	public String getVideo(@PathVariable int video_id,Model model,HttpServletRequest request) {//@PathVariable 어노테이션으로 url에 있는 { .. }의 내용을 가져온다.
 		UserVO userVO=(UserVO)request.getSession().getAttribute("login");
@@ -73,6 +74,10 @@ public class VideoController {
 			//태그
 			List<HashtagVO> hashlist=hashtagService.listHashtag(video_id);
 			if(hashlist!=null)	model.addAttribute("hash",hashlist);
+
+			//인기 댓글
+			List<ReplyVO> best=replyService.listBestReply(video_id);
+			if(best!=null) model.addAttribute("best",best);
 
 		}catch (Exception e){
 			e.printStackTrace();

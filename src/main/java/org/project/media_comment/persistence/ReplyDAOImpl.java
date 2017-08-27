@@ -58,4 +58,9 @@ public class ReplyDAOImpl implements ReplyDAO {
     public void updateReplyCount(ReplyCountVO vo) throws Exception {
         session.update(namespace+".updateReplyCount",vo);
     }
+
+    @Override
+    public List<ReplyVO> listBestReply(int video_id) throws Exception {
+        return session.selectList(namespace+".listBestReply",video_id);
+    }
 }
