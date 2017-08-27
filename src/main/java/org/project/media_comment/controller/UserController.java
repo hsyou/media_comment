@@ -88,4 +88,9 @@ public class UserController {
 		if(result == null) return "0";
 		return result+"";
 	}
+	@RequestMapping(value = "/logout", method = {RequestMethod.GET})
+	public String logout(UserVO vo, Model model, HttpSession session){
+		session.invalidate();
+		return "home/home";
+	}
 }

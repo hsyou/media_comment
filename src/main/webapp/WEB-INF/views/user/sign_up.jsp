@@ -58,6 +58,19 @@
     var idCheck = 0;
     var pwdCheck = 0;
     //아이디 체크하여 가입버튼 비활성화, 중복확인.
+    function valid_email(email){
+        re=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+        if(email.length < 6 || !re.test(email)){
+            alert("메일 형식이 맞지 않습니다. \n 다시 입력해주세요. \n");
+
+            email.select();
+            email.focus();
+             return false;
+        }else {
+            return true;
+        }
+    }
     function checkId() {
         var inputed = $('.id').val();
         $.ajax({
@@ -94,8 +107,9 @@
             flag2=1;
             if(flag==1&&flag2==1&&flag3==1) {
                 console.log("실행됩니다.");
-
-                 $("#frm").submit();
+                if(valid_email($("#useremail").val())){
+                    $("#frm").submit();
+                }
             }
         } else if (inputed != reinputed) {
             alert("비번 다릅니다");
