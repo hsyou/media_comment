@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Integer checkID(String user_email) throws Exception {
-        return userDAO.checkID(user_email);
+    public Integer checkId(String user_email) throws Exception {
+        return userDAO.checkId(user_email);
     }
 }
