@@ -79,4 +79,9 @@ public class ReplyServiceImpl implements ReplyService {
 
         return result;
     }
+
+    @Override
+    public List<ReplyVO> listBestReply(int video_id) throws Exception {
+        return replyDAO.listBestReply(video_id);
+    }
 }

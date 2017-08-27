@@ -213,20 +213,15 @@
 
 
             //리플 띄울시간 계산 (예제)
-//            setInterval(function () {
-//                var time = Math.floor(player.getCurrentTime());
-//                if (time == 68) {
-//                    $("#float_reply").text("아프겠다 ㅋㅋㅋㅋ");
-//                    showReply();
-//                } else if (time == 200) {
-//                    $("#float_reply").text("!!! 혐 주의 !!!");
-//                    showReply();
-//                } else if (time == 120) {
-//                    $("#float_reply").text("뭐하는거죠?");
-//                    showReply();
-//                }
-//
-//            }, 100);
+            setInterval(function () {
+                var time = Math.floor(player.getCurrentTime());
+                <c:forEach var="best" items="${best}">
+                    if (time == ${best.reply_playtime}) {
+                        $("#float_reply").text("${best.reply_content}");
+                        showReply();
+                    }
+                </c:forEach>
+            }, 100);
         }
 
         //댓글 입력 플래그
@@ -246,7 +241,6 @@
                 flag = 1;
             }
         });
-
 
         //리플 5초간 띄우기
         function showReply() {

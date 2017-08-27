@@ -3,6 +3,7 @@ package org.project.media_comment.persistence;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.project.media_comment.domain.VideoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +16,7 @@ public class HomeDaoImpl implements HomeDao {
 	private static String namespace = "org.project.media_comment.mapper.homeMapper";
 
 	@Override
-	public List<Object> getVideoCode() throws Exception {
-		return session.selectList(namespace + ".getVideoCode");
+	public List<VideoVO> listAllVideo() throws Exception {
+		return session.selectList(namespace + ".listAllVideo");
 	}
 }

@@ -3,6 +3,7 @@ package org.project.media_comment.controller;
 import java.util.List;
 import java.util.Locale;
 
+import org.project.media_comment.domain.VideoVO;
 import org.project.media_comment.service.HomeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,12 +31,11 @@ public class HomeController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
+
 		try {
-			List<Object> videoCode_List = homeService.getVideoCode();
-			model.addAttribute("list", videoCode_List);
-			System.out.println("확인 === " + homeService.getVideoCode());
+			List<VideoVO> list = homeService.listAllVideo();
+			if(list!=null)
+				model.addAttribute("list", list);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
