@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -74,14 +75,17 @@ public class UserController {
 
 		return returnurl;
 	}
-	@RequestMapping(value = "/checkId", method = {RequestMethod.POST})
-	public @ResponseBody int idCheck(String user_email,Model model) {
-		int result = 0;
+	@RequestMapping(value = "/checkId", method = {RequestMethod.GET})
+	public @ResponseBody String idCheck(@RequestParam("id") String user_email, Model model) {
+		Integer result = null; // 찾아서 갯수가 0이아니고 같은아이디가 몇개 찾아지면 아이디 등록 못하게하려고?
 		try {
-			result = UserService.checkID(user_email);
+			result = UserService.checkId(user_email);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return result;
+
+		if(result == null) return "0";
+		return result+"";
 	}
 }

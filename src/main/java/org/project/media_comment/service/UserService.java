@@ -10,5 +10,5 @@ public interface UserService {
     void createAccount(UserVO vo)throws Exception;
     UserVO getUser(int user_id)throws Exception;
     UserVO login(UserVO vo)throws Exception;
-    Integer checkID(String user_email)throws Exception;
+    Integer checkId(String user_email)throws Exception;
 }
