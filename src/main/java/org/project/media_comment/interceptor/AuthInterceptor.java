@@ -36,14 +36,12 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
         String query = req.getQueryString();//모든 파라미터와 값을 가지고 옴
 
-
         //URI 뒤의 query를 설정
         if(query == null || query.equals("null")){
              query = "";
         }else {
             query = "?" + query;
         }
-
 
         //session 에 dest를 담아둠
         if(req.getMethod().equals("GET")){
