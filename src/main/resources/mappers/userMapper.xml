@@ -9,7 +9,7 @@
 		select * from USERS where user_id=#{user_id}
 	</select>
 	<select id="login" resultType="UserVO">
-		SELECT user_id,user_email
+		SELECT user_id,user_email,user_nickname
 		FROM USERS
 		WHERE user_email=#{user_email} AND user_password=#{user_password}
 	</select>

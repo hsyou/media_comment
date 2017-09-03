@@ -43,6 +43,8 @@ public class UserVO {
         this.user_email = user_email;
     }
 
+    public String getUser_email(){return user_email;}
+
     public String getUser_password() {
         return user_password;
     }
