@@ -10,11 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM reply WHERE video_id=#{video_id};
 	</select>
 
-	<select id="listAllReplyLogin" resultType="org.project.media_comment.domain.ReplyVO">
-		SELECT a.reply_id,a.reply_content,a.reply_flag,a.user_id,a.video_id,a.reply_playtime,a.reply_like_count,a.reply_dislike_count,a.reply_date,b.reply_vote_flag FROM reply a LEFT JOIN reply_vote b ON a.user_id=b.user_id and a.reply_id=b.reply_id WHERE a.user_id=#{user_id} and a.video_id=#{video_id} FROM media_comment.reply a LEFT JOIN reply_vote b ON a.user_id=b.user_id and a.reply_id=b.reply_id WHERE a.user_id=#{user_id} and a.video_id=#{video_id}
+	<select id="listBestReply" resultType="ReplyVO">
+		SELECT * FROM reply WHERE video_id=#{video_id} ORDER BY (reply_like_count-reply_dislike_count) DESC limit 3;
 	</select>
 
-
+	<select id="listAllReplyLogin" resultType="org.project.media_comment.domain.ReplyVO">
+		SELECT a.reply_id,a.reply_content,a.reply_flag,a.user_id,a.video_id,a.reply_playtime,a.reply_like_count,a.reply_dislike_count,a.reply_date,b.reply_vote_flag FROM reply a LEFT JOIN reply_vote b ON a.user_id=b.user_id and a.reply_id=b.reply_id WHERE a.user_id=#{user_id} and a.video_id=#{video_id}
+	</select>
 
 	<insert id="insertReply">
 		INSERT INTO reply(user_id,video_id,reply_playtime,reply_content) VALUES(#{user_id},#{video_id},#{reply_playtime},#{reply_content})

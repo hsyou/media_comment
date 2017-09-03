@@ -43,11 +43,6 @@ public class VideoDAOImpl implements VideoDAO {
     }
 
     @Override
-    public List<VideoVO> listAllVideo() throws Exception {
-        return session.selectList(namespace+".listAllVideo");
-    }
-
-    @Override
     public void increaseHit(int video_id) throws Exception {
         session.update(namespace+".increaseHit",video_id);
     }
@@ -71,4 +66,10 @@ public class VideoDAOImpl implements VideoDAO {
     public void updateVideoCount(VideoCountVO vo) throws Exception {
         session.update(namespace+".updateVideoCount",vo);
     }
+
+    @Override
+    public void insertViewLog(VideoUserVO vo) throws Exception {
+        session.insert(namespace+".insertViewLog",vo);
+    }
+
 }

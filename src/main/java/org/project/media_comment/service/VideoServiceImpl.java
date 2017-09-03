@@ -28,16 +28,13 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public VideoVO getVideo(int video_id,int user_id) throws Exception {
         videoDAO.increaseHit(video_id);
+        videoDAO.insertViewLog(new VideoUserVO(user_id,video_id));
         if(user_id==0){
             return videoDAO.getVideo(video_id);
         }
         return videoDAO.getVideoLogin(new VideoUserVO(user_id,video_id));
     }
 
-    @Override
-    public List<VideoVO> listAllVideo() throws Exception {
-        return videoDAO.listAllVideo();
-    }
     @Override
     public int voteVideo(VideoVoteVO vo) throws Exception {
 

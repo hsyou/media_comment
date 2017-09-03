@@ -2,9 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.project.media_comment.mapper.homeMapper">
-	<select id="getVideoCode" resultType="org.project.media_comment.domain.VideoVO">
-		select video_code, video_title
+	<select id="listAllVideo" resultType="org.project.media_comment.domain.VideoVO">
+		select video_id,video_code, video_title,video_hit,video_post_date
 		from video
-		order by video_post_date limit 4
+		order by video_post_date limit 16
 	</select>
+
+
+	<select id="listHotVideo" resultType="VideoVO">
+		select a.video_id,b.video_title,b.video_post_date,b.video_code,b.video_hit,b.user_id,b.video_like_count,b.video_dislike_count from view_log a left join video b on a.video_id=b.video_id where a.view_log_date between timestamp(DATE_SUB(NOW(), INTERVAL 1 day)) AND timestamp(NOW()) group by a.video_id order by count(*) desc limit 4;
+
+	</select>
+
+	<select id="listVideoByCondition" resultType="VideoVO">
+		SELECT * FROM video ORDER BY ${condition} DESC;
+	</select>
+
 </mapper>
