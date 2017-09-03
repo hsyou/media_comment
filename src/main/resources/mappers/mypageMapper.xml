@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.project.media_comment.mapper.mypageMapper">
+	
+	<select id="getRecentActivity" resultType="org.project.media_comment.domain.MypageVO">
+
+		select * from view_log where user_id=#{user_id}
+
+	</select>
+
+
+	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
+	<insert id="addActivity">
+		INSERT INTO activity(activity_name,user_id,video_id,type,activity_date) VALUES(#{activity_name},#{user_id},#{video_id},#{type},current_timestamp)
+	</insert>
+</mapper>
