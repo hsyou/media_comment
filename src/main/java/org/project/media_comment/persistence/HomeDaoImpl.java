@@ -19,4 +19,14 @@ public class HomeDaoImpl implements HomeDao {
 	public List<VideoVO> listAllVideo() throws Exception {
 		return session.selectList(namespace + ".listAllVideo");
 	}
+
+	@Override
+	public List<VideoVO> listHotVideo() throws Exception {
+		return session.selectList(namespace+".listHotVideo");
+	}
+
+	@Override
+	public List<VideoVO> listVideoByCondition(String condition) throws Exception {
+		return session.selectList(namespace+".listVideoByCondition",condition);
+	}
 }

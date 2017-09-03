@@ -272,7 +272,6 @@
             var video_id = $(this).siblings('.video_id').val();
             var params = {"user_id": id, "video_id": video_id, "video_vote_flag": "1"};
 
-            console.log("id ,video,vote"+id+video_id);
             var btn = $(this);
             $.ajax({
                 url: '/video/vote',

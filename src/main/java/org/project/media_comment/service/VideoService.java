@@ -12,7 +12,5 @@ public interface VideoService {
 
     public int uploadVideo(VideoVO vo)throws Exception;
     public VideoVO getVideo(int video_id,int user_id)throws Exception;
-    public List<VideoVO> listAllVideo()throws Exception;
     public int voteVideo(VideoVoteVO vo)throws Exception;
-
 }

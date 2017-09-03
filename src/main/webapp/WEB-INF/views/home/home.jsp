@@ -66,6 +66,44 @@
                         </c:forEach>
                     </ul>
 
+                    <div class="title-topic">
+                        <span>실시간 인기</span>
+                    </div>
+                    <ul class="list-unstyled video-list-thumbs row">
+                        <c:forEach items="${hot}" var="vo">
+                            <li class="col-lg-3 col-sm-4 col-xs-6">
+                                <a href="video/${vo.video_id}">
+                                    <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
+                                         class="img-responsive" height="130px"/>
+                                        ${vo.video_title}
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <span class="duration">03:15</span>
+                                    <span class="time">1 ㄴ</span>
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+
+                    <div class="title-topic">
+                        <button type="button" id="btn_order_hit" class="btn btn-primary video_order">조회순</button>
+                        <button type="button" id="btn_order_like" class="btn btn-default video_order">좋아요순</button>
+                        <button type="button" id="btn_order_upload" class="btn btn-default video_order">등록순</button>
+                    </div>
+                    <ul class="list-unstyled video-list-thumbs row">
+                        <c:forEach items="${order}" var="vo">
+                            <li class="col-lg-3 col-sm-4 col-xs-6">
+                                <a href="video/${vo.video_id}">
+                                    <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
+                                         class="img-responsive" height="130px"/>
+                                        ${vo.video_title}
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <span class="duration">03:15</span>
+                                    <span class="time">1 ㄴ</span>
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+
                 </div>
             </div>
             <div class="tool-ft hidden-lg">
@@ -103,6 +141,7 @@
             $(".hssa").addClass("m-left");
         });
     }
+
 </script>
 
 </body>

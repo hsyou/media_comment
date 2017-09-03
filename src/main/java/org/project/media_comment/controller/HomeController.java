@@ -36,6 +36,11 @@ public class HomeController {
 			List<VideoVO> list = homeService.listAllVideo();
 			if(list!=null)
 				model.addAttribute("list", list);
+
+			List<VideoVO> hotlist = homeService.listHotVideo();
+			if(hotlist!=null)
+				model.addAttribute("hot", hotlist);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

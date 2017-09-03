@@ -137,20 +137,4 @@ public class VideoController {
 	}
 
 
-	//list all
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String listAll(Model model) {
-
-		try {
-
-			model.addAttribute("list",service.listAllVideo());
-
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		return "video/listAll";
-	}
-
-
-
 }

@@ -18,4 +18,14 @@ public class HomeServiceImpl implements HomeService {
 //		System.out.println("서비스쪽!!!" + str);
 		return homeDao.listAllVideo();
 	}
+
+	@Override
+	public List<VideoVO> listHotVideo() throws Exception {
+		return homeDao.listHotVideo();
+	}
+
+	@Override
+	public List<VideoVO> listVideoByCondition(String condition) throws Exception {
+		return homeDao.listVideoByCondition(condition);
+	}
 }
