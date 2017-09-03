@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.project.media_comment.mapper.mypageMapper">
+
+	<select id="getRecentActivity" resultType="org.project.media_comment.domain.MypageVO">
+
+	select * from video A ,(
+
+	select video_id, view_log_date from view_log where user_id=1 order by view_log_date DESC limit 10
+
+	) AS B where A.video_id = B.video_id order by B.view_log_date DESC
+
+	</select>
+
+	<select id="getMypost" resultType="org.project.media_comment.domain.VideoVO">
+
+		select * from video where user_id = #{user_id} order by video_post_date DESC limit 10
+
+	</select>
+
+
+	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
+	<insert id="addActivity">
+		INSERT INTO activity(activity_name,user_id,video_id,type,activity_date) VALUES(#{activity_name},#{user_id},#{video_id},#{type},current_timestamp)
+	</insert>
+</mapper>

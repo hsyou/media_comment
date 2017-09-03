@@ -34,6 +34,10 @@
 			<mapping path="/video/upload"/>
 			<beans:ref bean ="authInterceptor"/>
 		</interceptor>
+		<interceptor>
+			<mapping path="/Mypage/*"/>
+			<beans:ref bean ="authInterceptor"/>
+		</interceptor>
 	</interceptors>
 	
 	<context:component-scan base-package="org.project.media_comment.controller" />

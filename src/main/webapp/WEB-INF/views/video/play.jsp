@@ -12,10 +12,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
     <!-- bootstrap -->
     <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"
             type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
     <!-- favicon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,29 +79,37 @@
 
         #float_reply {
             font-weight: bold;
-
+            position: absolute;
+            z-index: 999;
+            margin: 2%;
+            background-color: white;
         }
     </style>
 </head>
 <body style="background-color:#9da6a9">
 <%UserVO vo = (UserVO) session.getAttribute("login");%>
 <div class="col-md-6 col-md-offset-3 main_frame">
-    <div class="panel panel-default">
-        <div class="panel-body row">
-            <span id="float_reply"></span>
-        </div>
+    <%if (vo == null) {%>
+    <a href="/user/login">로그인</a>
+    <%} else {%>
+    <a href="/user/logout">로그아웃</a>
+    <%}%>
+    <div id="video_box">
+        <iframe width="854" height="480" id="player"
+                src="https://www.youtube.com/embed/${videoVO.video_code}?enablejsapi=1"
+                frameborder="0"
+                allowfullscreen></iframe>
+        <div id="reply_box">
+            <span id="float_reply"></span></div>
     </div>
-    <iframe width="854" height="480" id="player" src="https://www.youtube.com/embed/${videoVO.video_code}?enablejsapi=1"
-            frameborder="0"
-            allowfullscreen></iframe>
-
 
     <div class="panel panel-default">
         <div class="panel-body row">
-            <span id="tag"><c:forEach var="hash" items="${hash}"><a href="#">#${hash.hashtag}</a>&nbsp;</c:forEach></span>
+            <span id="tag"><c:forEach var="hash" items="${hash}"><a
+                    href="#">#${hash.hashtag}</a>&nbsp;</c:forEach></span>
             <h1>${videoVO.video_title}</h1>
             <h3>${videoVO.user_id}</h3>
-                <h3>  조회수 : ${videoVO.video_hit}회</h3>
+            <h3> 조회수 : ${videoVO.video_hit}회</h3>
             <div class="pull-right">
 
                 <%if (vo != null) {%>
@@ -208,18 +219,20 @@
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player');
             var offset = $("#player").offset();
-            $("#float_reply").offset = ({left: offset.left + 200, top: offset.top + 100});
-            $("#float_reply").hide();
-
+//            $("#float_reply").offset = ({left: offset.left + 200, top: offset.top + 100});
+//            $("#float_reply").hide();
+            $("#float_reply").draggable({
+                containment: $("video_box") // 부모요소 안에 종속
+            });
 
             //리플 띄울시간 계산 (예제)
             setInterval(function () {
                 var time = Math.floor(player.getCurrentTime());
                 <c:forEach var="best" items="${best}">
-                    if (time == ${best.reply_playtime}) {
-                        $("#float_reply").text("${best.reply_content}");
-                        showReply();
-                    }
+                if (time == ${best.reply_playtime}) {
+                    $("#float_reply").text("${best.reply_content}");
+                    showReply();
+                }
                 </c:forEach>
             }, 100);
         }
@@ -245,9 +258,9 @@
         //리플 5초간 띄우기
         function showReply() {
             $("#float_reply").show();
-            setTimeout(function () {
-                $("#float_reply").hide();
-            }, 5000);
+//            setTimeout(function () {
+//                $("#float_reply").hide();
+//            }, 5000);
         }
 
         //재생시간 이동
@@ -279,7 +292,7 @@
                 data: params,
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 success: function (result) {
-                    console.log("result : "+result);
+                    console.log("result : " + result);
                     var like_count = btn.siblings(".like_count");
                     var dislike_count = btn.siblings(".dislike_count");
                     switch (result) {

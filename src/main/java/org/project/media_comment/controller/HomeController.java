@@ -41,6 +41,19 @@ public class HomeController {
 			if(hotlist!=null)
 				model.addAttribute("hot", hotlist);
 
+			List<VideoVO> hitlist=homeService.listVideoByCondition("video_hit");
+			if(hitlist!=null)
+				model.addAttribute("hit",hitlist);
+
+			List<VideoVO> likelist=homeService.listVideoByCondition("video_like_count-video_dislike_count");
+			if(likelist!=null)
+				model.addAttribute("like",likelist);
+
+			List<VideoVO> datelist=homeService.listVideoByCondition("video_post_date");
+			if(datelist!=null)
+				model.addAttribute("date",datelist);
+
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

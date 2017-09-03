@@ -1,6 +1,8 @@
 package org.project.media_comment.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.project.media_comment.domain.VideoVO;
@@ -27,6 +29,9 @@ public class HomeDaoImpl implements HomeDao {
 
 	@Override
 	public List<VideoVO> listVideoByCondition(String condition) throws Exception {
-		return session.selectList(namespace+".listVideoByCondition",condition);
+		Map<String, String> parameters = new HashMap<String, String>();
+
+		parameters.put("condition", condition);
+		return session.selectList(namespace+".listVideoByCondition",parameters);
 	}
 }

@@ -59,8 +59,6 @@
                                          class="img-responsive" height="130px"/>
                                         ${vo.video_title}
                                     <i class="fa fa-play-circle-o"></i>
-                                    <span class="duration">03:15</span>
-                                    <span class="time">1 ㄴ</span>
                                 </a>
                             </li>
                         </c:forEach>
@@ -77,33 +75,69 @@
                                          class="img-responsive" height="130px"/>
                                         ${vo.video_title}
                                     <i class="fa fa-play-circle-o"></i>
-                                    <span class="duration">03:15</span>
-                                    <span class="time">1 ㄴ</span>
                                 </a>
                             </li>
                         </c:forEach>
                     </ul>
 
-                    <div class="title-topic">
-                        <button type="button" id="btn_order_hit" class="btn btn-primary video_order">조회순</button>
-                        <button type="button" id="btn_order_like" class="btn btn-default video_order">좋아요순</button>
-                        <button type="button" id="btn_order_upload" class="btn btn-default video_order">등록순</button>
+                    <div role="tabpanel">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#hit" aria-controls="hit" role="tab" data-toggle="tab">조회순</a></li>
+                            <li role="presentation"><a href="#like" aria-controls="like" role="tab" data-toggle="tab">좋아요순</a></li>
+                            <li role="presentation"><a href="#date" aria-controls="date" role="tab" data-toggle="tab">등록순</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="hit">
+                                <ul class="list-unstyled video-list-thumbs row">
+                                    <c:forEach items="${hit}" var="vo">
+                                        <li class="col-lg-3 col-sm-4 col-xs-6">
+                                            <a href="video/${vo.video_id}">
+                                                <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
+                                                     class="img-responsive" height="130px"/>
+                                                    ${vo.video_title}
+                                                <i class="fa fa-play-circle-o"></i>
+                                                <span class="duration">03:15</span>
+                                                <span class="time">1 ㄴ</span>
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="like">
+                                <ul class="list-unstyled video-list-thumbs row">
+                                    <c:forEach items="${like}" var="vo">
+                                        <li class="col-lg-3 col-sm-4 col-xs-6">
+                                            <a href="video/${vo.video_id}">
+                                                <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
+                                                     class="img-responsive" height="130px"/>
+                                                    ${vo.video_title}
+                                                <i class="fa fa-play-circle-o"></i>
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="date">
+                                <ul class="list-unstyled video-list-thumbs row">
+                                    <c:forEach items="${date}" var="vo">
+                                        <li class="col-lg-3 col-sm-4 col-xs-6">
+                                            <a href="video/${vo.video_id}">
+                                                <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
+                                                     class="img-responsive" height="130px"/>
+                                                    ${vo.video_title}
+                                                <i class="fa fa-play-circle-o"></i>
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
-                    <ul class="list-unstyled video-list-thumbs row">
-                        <c:forEach items="${order}" var="vo">
-                            <li class="col-lg-3 col-sm-4 col-xs-6">
-                                <a href="video/${vo.video_id}">
-                                    <img src="https://img.youtube.com/vi/${vo.video_code}/hqdefault.jpg"
-                                         class="img-responsive" height="130px"/>
-                                        ${vo.video_title}
-                                    <i class="fa fa-play-circle-o"></i>
-                                    <span class="duration">03:15</span>
-                                    <span class="time">1 ㄴ</span>
-                                </a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-
                 </div>
             </div>
             <div class="tool-ft hidden-lg">
