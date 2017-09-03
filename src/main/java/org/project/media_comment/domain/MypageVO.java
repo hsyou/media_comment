@@ -4,25 +4,45 @@ import java.util.Date;
 
 public class MypageVO {
 
-	private int activity_id;
-	private String activity_name;
-	private int user_id;
+	private int view_log_id;
+	private Date view_log_date;
+
+	public int getView_log_id() {
+		return view_log_id;
+	}
+	public void setView_log_id(int view_log_id) {
+		this.view_log_id = view_log_id;
+	}
+	public Date getView_log_date() {
+		return view_log_date;
+	}
+	public void setView_log_date(Date view_log_date) {
+		this.view_log_date = view_log_date;
+	}
+
 	private int video_id;
-	private int type;
-	private Date activity_date;
-	
-	
-	public int getActivity_id() {
-		return activity_id;
+	private String video_title;
+	private int user_id;
+	private Date video_post_date;
+	private String video_code;
+	private String video_content;
+	private int video_hit;
+	private int video_like_count;
+	private int video_dislike_count;
+	private int video_vote_flag;
+	private String hashtag;
+
+	public int getVideo_id() {
+		return video_id;
 	}
-	public void setActivity_id(int activity_id) {
-		this.activity_id = activity_id;
+	public void setVideo_id(int video_id) {
+		this.video_id = video_id;
 	}
-	public String getActivity_name() {
-		return activity_name;
+	public String getVideo_title() {
+		return video_title;
 	}
-	public void setActivity_name(String activity_name) {
-		this.activity_name = activity_name;
+	public void setVideo_title(String video_title) {
+		this.video_title = video_title;
 	}
 	public int getUser_id() {
 		return user_id;
@@ -30,25 +50,61 @@ public class MypageVO {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public int getVideo_id() {
-		return video_id;
+	public Date getVideo_post_date() {
+		return video_post_date;
 	}
-	public void setVideo_id(int video_id) {
-		this.video_id = video_id;
+	public void setVideo_post_date(Date video_post_date) {
+		this.video_post_date = video_post_date;
 	}
-	public int getType() {
-		return type;
+	public String getVideo_code() {
+		return video_code;
 	}
-	public void setType(int type) {
-		this.type = type;
+	public void setVideo_code(String video_code) {
+		this.video_code = video_code;
 	}
-	public Date getActivity_date() {
-		return activity_date;
+	public String getVideo_content() {
+		return video_content;
 	}
-	public void setActivity_date(Date activity_date) {
-		this.activity_date = activity_date;
+	public void setVideo_content(String video_content) {
+		this.video_content = video_content;
 	}
-	
-	
-	
+	public int getVideo_hit() {
+		return video_hit;
+	}
+	public void setVideo_hit(int video_hit) {
+		this.video_hit = video_hit;
+	}
+
+	public int getVideo_like_count() {
+		return video_like_count;
+	}
+
+	public void setVideo_like_count(int video_like_count) {
+		this.video_like_count = video_like_count;
+	}
+
+	public int getVideo_dislike_count() {
+		return video_dislike_count;
+	}
+
+	public void setVideo_dislike_count(int video_dislike_count) {
+		this.video_dislike_count = video_dislike_count;
+	}
+
+	public int getVideo_vote_flag() {
+		return video_vote_flag;
+	}
+
+	public void setVideo_vote_flag(int video_vote_flag) {
+		this.video_vote_flag = video_vote_flag;
+	}
+
+	public String getHashtag() {
+		return hashtag;
+	}
+
+	public void setHashtag(String hashtag) {
+		this.hashtag = hashtag;
+	}
+
 }

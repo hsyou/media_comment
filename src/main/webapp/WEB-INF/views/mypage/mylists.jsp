@@ -3,6 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ page import="org.project.media_comment.domain.MypageVO" %>
+<%@ page import="java.util.*" %>
+<%@ page import="org.project.media_comment.domain.VideoVO" %>
+<%@ page import="org.project.media_comment.domain.UserVO" %>
+<%@ page import="org.springframework.security.core.userdetails.User" %>
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -16,15 +23,18 @@
 
   
     <!-- Bootstrap Core CSS -->
-    <link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../resources/assets/mylists.css" rel="stylesheet">
+    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/resources/assets/mylists.css" rel="stylesheet">
  
 
 <script type="text/javascript">
-function open (){
-	alert();
+
+function govideo(videonum){
+        var a= "http://localhost:8282/video/"+videonum.toString();
+        location.href=a;
 
 }
+
 </script>
 
 
@@ -36,16 +46,20 @@ function open (){
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
  <div class="mail-box">
                   <aside class="sm-side">
+                      <%
+
+                          UserVO userVO=(UserVO)session.getAttribute("login");
+                      %>
 				  <!-- 유저정보 -->
                       <div class="user-head">
                           <a class="inbox-avatar" href="javascript:;">
                               <img  width="64" hieght="60" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg">
                           </a>
                           <div class="user-name">
-                              <h5><a href="#">Alireza Zare</a></h5>
-                              <span><a href="#">Info.Ali.Pci@Gmail.com</a></span>
+                              <h5><%=userVO.getUser_nickname()%>></h5>
+                              <span><%=userVO.getUser_email()%></span>
                           </div>
-                          <a class="mail-dropdown pull-right" href="javascript:open();" >
+                          <a class="mail-dropdown pull-right" >
                               <i class="fa fa-chevron-left"></i>
 							</a>
 		
@@ -54,14 +68,14 @@ function open (){
 				<!--메뉴들-->
                       <ul class="inbox-nav inbox-divider">
                           <li class="active">
-                              <a href="#"><i class="fa fa-eye"></i> 최근 열람 게시글 </a>
+                              <a href="/Mypage/mypage"><i class="fa fa-eye"></i> 최근 열람 게시글 </a>
 
                           </li>
                           <li>
-                              <a href="#"><i class="fa fa-film"></i> 내 게시글 </a>
+                              <a href="/Mypage/mypost"><i class="fa fa-film"></i> 내 게시글 </a>
                           </li>
 						  <li>
-                              <a href="#"><i class="fa fa-film"></i> 즐겨찾기 </a>
+                              <a href="/Mypage/myfavorite"><i class="fa fa-film"></i> 즐겨찾기 </a>
                           </li>
                           <li>
                               <a href="#"><i class="fa fa-bookmark-o"></i> 새 알림 <span class="label label-danger pull-right">2</span> </a>
@@ -112,19 +126,49 @@ function open (){
                           <table class="table table-inbox table-hover">
                             <tbody>
 
-                              <tr class="unread">
-	
-								  <td class="view-sumnail"> <img class= "sumnail" src="https://img.youtube.com/vi/nVCubhQ454c/2.jpg" /></td>
+
+                            <%List list=(List)request.getAttribute("views");
+                                if(list!=null)
+                                for(Object obj : list){
+                                    String videoName="";
+                                    int videoId=0;
+                                    String videoContent="";
+                                    Date videoDate= new Date();
+                                    String videoCode="";
+                                    if(obj instanceof MypageVO){
+                                        videoName=((MypageVO) obj).getVideo_title();
+                                        videoId=((MypageVO) obj).getVideo_id();
+                                        videoContent = ((MypageVO) obj).getVideo_content();
+                                        videoDate= ((MypageVO) obj).getView_log_date();
+                                        videoCode=((MypageVO) obj).getVideo_code();
+                                    }
+                                    else if( obj instanceof VideoVO){
+                                        videoName=((VideoVO) obj).getVideo_title();
+                                        videoId=((VideoVO) obj).getVideo_id();
+                                        videoContent = ((VideoVO) obj).getVideo_content();
+                                        videoDate= ((VideoVO) obj).getVideo_post_date();
+                                        videoCode=((VideoVO) obj).getVideo_code();
+                                    }
+                            %>
+
+                                <tr class="unread" onclick="govideo(<%= videoId %>)">
+
+								  <td class="view-sumnail"> <img class= "sumnail" src="https://img.youtube.com/vi/<%=videoCode%>/2.jpg" /></td>
 								  
-								  <td class="view-message  dont-show">비디오 이름</td>
-                                  <td class="view-message ">베스트 댓글 </td>
+								  <td class="view-message  dont-show"><%=videoName%></td>
+                                  <td class="view-message "><%=videoContent%></td>
                                   
-                                  <td class="view-message  text-right">9:27 AM</td>
+                                  <td class="view-message  text-right"><%=videoDate%></td>
 								  
 								  <td class="inbox-small-cells">
                                       <i class="fa fa-trash"></i>
                                   </td>
+
                               </tr>
+                            <%
+                                }
+                            %>
+                                <!--
                               <tr class="unread">
                                   <td class="view-sumnail"> <img class= "sumnail" src="https://img.youtube.com/vi/nVCubhQ454c/2.jpg" /></td>
 								  
@@ -149,6 +193,7 @@ function open (){
                                       <i class="fa fa-trash"></i>
                                   </td>
                               </tr>
+                              -->
                               
                           </tbody>
                           </table>

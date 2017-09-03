@@ -4,10 +4,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.project.media_comment.mapper.mypageMapper">
-	
+
 	<select id="getRecentActivity" resultType="org.project.media_comment.domain.MypageVO">
 
-		select * from view_log where user_id=#{user_id}
+	select * from video A ,(
+
+	select video_id, view_log_date from view_log where user_id=1 order by view_log_date DESC limit 10
+
+	) AS B where A.video_id = B.video_id order by B.view_log_date DESC
+
+	</select>
+
+	<select id="getMypost" resultType="org.project.media_comment.domain.VideoVO">
+
+		select * from video where user_id = #{user_id} order by video_post_date DESC limit 10
 
 	</select>
 

@@ -2,10 +2,10 @@ package org.project.media_comment.persistence;
 
 import org.apache.ibatis.session.SqlSession;
 import org.project.media_comment.domain.MypageVO;
+import org.project.media_comment.domain.VideoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.inject.Inject;
 import java.util.*;
 
 /**
@@ -13,7 +13,7 @@ import java.util.*;
  */
 
 @Repository
-public class MypageDAOImpl implements MypageDAO{
+public class MypageDAOImpl implements MypageDAO {
 
     @Autowired
     private SqlSession session;
@@ -23,12 +23,21 @@ public class MypageDAOImpl implements MypageDAO{
 
     @Override
     public void addActivity(MypageVO vo) throws Exception {
-        session.insert(namespace+".addActivity",vo);
+        session.insert(namespace + ".addActivity", vo);
         //寃곌낵�쟻�쑝濡� org.project.media_comment.mapper.videoMapper�쓽 uploadVideo瑜� �떎�뻾.
     }
 
     @Override
     public List<MypageVO> getRecentActivity(int user_id) throws Exception {
-        return session.selectList(namespace+".getRecentActivity",user_id);
+        return session.selectList(namespace + ".getRecentActivity", user_id);
+    }
+
+    @Override
+    public List<VideoVO> getMypost(int user_id) throws Exception {
+        return session.selectList(namespace+".getMypost",user_id);
+    }
+    @Override
+    public List<VideoVO> getMyfavorite(int user_id) throws Exception {
+        return session.selectList(namespace+".getMyfavorite",user_id);
     }
 }
