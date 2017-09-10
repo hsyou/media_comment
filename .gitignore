@@ -1,4 +1,10 @@
 ﻿#����
 media_comment.iml
+<<<<<<< HEAD
 target/
 .idea/workspace.xml
+=======
+/target/
+.idea/workspace.xml
+
+>>>>>>> 70d864027ccee7e96a61b1d743c332136a465274
