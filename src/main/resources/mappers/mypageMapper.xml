@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.project.media_comment.mapper.mypageMapper">
 
@@ -22,8 +22,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 
+	<select id="getMyInfo" resultType="org.project.media_comment.domain.MyInfoVO">
+
+		SELECT a.user_id, a.replyCnt, b.videoCnt
+		FROM
+		(SELECT user_id, COUNT(*) as replyCnt FROM reply where user_id =${user_id}) as A
+		JOIN
+		(SELECT user_id, COUNT(*) as videoCnt FROM video WHERE USER_ID=${user_id}) AS B
+		WHERE a.user_id= b.user_id
+	</select>
+
+
+	<select id="getMyHashtag" resultType="org.project.media_comment.domain.HashtagVO">
+
+		select * from hashtag where user_id=${user_id} and type=0
+	</select>
+
+
+	<select id="getMyfavorite" resultType="org.project.media_comment.domain.VideoVO">
+		select a.* from video as a, (Select * from video_vote where user_id=${user_id}) as b
+		where a.video_id = b.video_id;
+	</select>
+
 	<!--#{ .. } 은 DAO에서 파라미터로 보낸 VideoVO의 클래스 변수들이다.-->
 	<insert id="addActivity">
-		INSERT INTO activity(activity_name,user_id,video_id,type,activity_date) VALUES(#{activity_name},#{user_id},#{video_id},#{type},current_timestamp)
+		INSERT INTO activity(activity_name,user_id,video_id,type,activity_date) VALUES(${activity_name},${user_id},${video_id},${type},current_timestamp)
 	</insert>
 </mapper>

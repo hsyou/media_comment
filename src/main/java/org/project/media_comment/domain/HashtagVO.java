@@ -3,6 +3,8 @@ package org.project.media_comment.domain;
 public class HashtagVO {
 
     private int video_id;
+    private int hash_id;
+    private int type;
     private String hashtag;
 
     public HashtagVO() {
