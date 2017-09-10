@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<update id="updateReplyVote">
-		UPDATE reply_vote SET reply_vote_flag=#{reply_vote_flag}
+		UPDATE reply_vote SET reply_vote_flag=#{reply_vote_flag} WHERE reply_id=#{reply_id}
 	</update>
 
 	<update id="updateReplyCount">

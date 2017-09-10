@@ -39,6 +39,10 @@
 	</bean>
 
 
+	 <!--@Service 랑 @Repository 도 콤포넌트 @Component의 일종임
+	빈으로 등록시켜주는 것들은 이렇게 context파일에서 등록을 해줘야합니다.-->
 	<context:component-scan base-package="org.project.media_comment.persistence"></context:component-scan>
 	<context:component-scan base-package="org.project.media_comment.service"></context:component-scan>
+	<context:component-scan base-package="org.project.media_comment.util"></context:component-scan>
+
 </beans>

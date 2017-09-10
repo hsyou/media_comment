@@ -9,19 +9,44 @@ public class PercentMapVO {
 
     private int percentMapId;
     private int mapOrder; // 나중에 연산을위해 몇번째 갱신된 맵인지 확인하기위한 변수
+    private int reply_id;
     private double[][] map;
-    private Date validTime; // 이 퍼센트 맵이 유효한 시간 저장.(시간대별로 댓글이 달라지므로)
+    private String mapStr;
+    public String getMapStr() {
+        return mapStr;
+    }
 
-    public PercentMapVO(int percentMapId, int mapOrder, double[][] map, Date validTime) {
+
+
+    public PercentMapVO(){};
+
+    public PercentMapVO(int percentMapId, int mapOrder, int reply_id, double[][] map, String mapStr) {
         this.percentMapId = percentMapId;
         this.mapOrder = mapOrder;
+        this.reply_id = reply_id;
         this.map = map;
-        this.validTime = validTime;
+        this.mapStr = mapStr;
+    }
+    public PercentMapVO(int percentMapId, int mapOrder, int reply_id, String mapStr) {
+        this.percentMapId = percentMapId;
+        this.mapOrder = mapOrder;
+        this.reply_id = reply_id;
+        this.mapStr = mapStr;
+    }
+
+    public int getReply_id() {
+        return reply_id;
+    }
+
+    public void setReply_id(int reply_id) {
+        this.reply_id = reply_id;
     }
 
     public int getPercentMapId() {
         return percentMapId;
     }
+
+    public void setMapStr(String mapStr) {this.mapStr = mapStr;}
 
     public void setPercentMapId(int percentMapId) {
         this.percentMapId = percentMapId;
@@ -41,13 +66,5 @@ public class PercentMapVO {
 
     public void setMap(double[][] map) {
         this.map = map;
-    }
-
-    public Date getValidTime() {
-        return validTime;
-    }
-
-    public void setValidTime(Date validTime) {
-        this.validTime = validTime;
     }
 }
