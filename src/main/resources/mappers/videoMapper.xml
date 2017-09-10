@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<update id="updateVideoVote">
-		UPDATE video_vote SET video_vote_flag=#{video_vote_flag}
+		UPDATE video_vote SET video_vote_flag=#{video_vote_flag} where video_id=#{video_id}
 	</update>
 
 	<update id="updateVideoCount">

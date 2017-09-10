@@ -1,6 +1,7 @@
 package org.project.media_comment.persistence;
 
 import org.apache.ibatis.session.SqlSession;
+import org.project.media_comment.domain.MyInfoVO;
 import org.project.media_comment.domain.MypageVO;
 import org.project.media_comment.domain.VideoVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,15 @@ public class MypageDAOImpl implements MypageDAO {
     @Override
     public List<VideoVO> getMyfavorite(int user_id) throws Exception {
         return session.selectList(namespace+".getMyfavorite",user_id);
+    }
+
+    @Override
+    public MyInfoVO getMyInfo(int user_id) throws Exception{
+        return session.selectOne(namespace+".getMyInfo",user_id);
+    }
+
+    @Override
+    public List getMyHashtag(int user_id) throws Exception{
+        return session.selectList(namespace+".getMyHashtag",user_id);
     }
 }

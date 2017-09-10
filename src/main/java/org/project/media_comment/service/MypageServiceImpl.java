@@ -3,6 +3,7 @@ package org.project.media_comment.service;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.project.media_comment.domain.MyInfoVO;
 import org.project.media_comment.domain.MypageVO;
 import org.project.media_comment.domain.VideoVO;
 import org.project.media_comment.persistence.MypageDAO;
@@ -18,8 +19,8 @@ public class MypageServiceImpl implements MypageService{
 
     @Override
     public void addActivity(MypageVO vo) throws Exception {
-    	
-    	mypageDAO.addActivity(vo);
+
+        mypageDAO.addActivity(vo);
     }
 
     @Override
@@ -37,6 +38,14 @@ public class MypageServiceImpl implements MypageService{
         return mypageDAO.getMyfavorite(user_id);
     }
 
+    @Override
+    public MyInfoVO getMyInfo(int user_id) throws Exception{
+        return mypageDAO.getMyInfo(user_id);
+    }
 
+    @Override
+    public List getMyHashtag(int user_id) throws Exception{
+        return mypageDAO.getMyHashtag(user_id);
+    }
 
 }

@@ -13,6 +13,11 @@ public class ReplyVoteVO {
     public ReplyVoteVO() {
     }
 
+    public ReplyVoteVO(int reply_id,int reply_vote_id) {
+        this.reply_vote_id = reply_vote_id;
+        this.reply_id = reply_id;
+    }
+
     public ReplyVoteVO(int reply_id, int user_id, int reply_vote_flag) {
         this.reply_id = reply_id;
         this.user_id = user_id;
