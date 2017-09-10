@@ -50,8 +50,8 @@ public class ReplyDAOImpl implements ReplyDAO {
     }
 
     @Override
-    public void updateReplyVote(int reply_vote_flag) throws Exception {
-        session.update(namespace+".updateReplyVote",reply_vote_flag);
+    public void updateReplyVote(ReplyVoteVO vo) throws Exception {
+        session.update(namespace+".updateReplyVote",vo);
     }
 
     @Override

@@ -17,7 +17,7 @@ public interface ReplyDAO {
     public void insertReply(ReplyVO vo)throws Exception;
     public Integer selectReplyVote(ReplyVoteVO vo)throws Exception;
     public void voteReply(ReplyVoteVO vo)throws Exception;
-    public void updateReplyVote(int reply_vote_flag)throws Exception;
+    public void updateReplyVote(ReplyVoteVO vo)throws Exception;
     public void updateReplyCount(ReplyCountVO vo)throws Exception;
     public List<ReplyVO> listBestReply(int video_id)throws Exception;
 }

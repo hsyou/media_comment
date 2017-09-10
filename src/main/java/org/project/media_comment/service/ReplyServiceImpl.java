@@ -58,7 +58,7 @@ public class ReplyServiceImpl implements ReplyService {
             }else{
                 replyDAO.updateReplyCount(new ReplyCountVO(reply_id, 0, -1));
             }
-            replyDAO.updateReplyVote(0);
+            replyDAO.updateReplyVote(new ReplyVoteVO(reply_id,0));
             result=0;
         }else if(!result.equals(flag)){//다른 선택 -> 다른선택으로
             if(result==1&&flag==-1){//like->dislike
@@ -74,7 +74,7 @@ public class ReplyServiceImpl implements ReplyService {
                 replyDAO.updateReplyCount(new ReplyCountVO(reply_id, 1, -1));
                 result=2;
             }
-            replyDAO.updateReplyVote(vo.getReply_vote_flag());
+            replyDAO.updateReplyVote(new ReplyVoteVO(reply_id,vo.getReply_vote_flag()));
         }
 
         return result;
@@ -82,6 +82,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Override
     public List<ReplyVO> listBestReply(int video_id) throws Exception {
+
         return replyDAO.listBestReply(video_id);
     }
 }
