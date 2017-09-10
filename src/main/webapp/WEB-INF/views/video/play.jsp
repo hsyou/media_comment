@@ -80,13 +80,13 @@
         .reply_box {
             position: absolute;
             z-index: 999;
-            padding: 20px;
+            padding: 25px;
         }
 
         .float_reply {
             width: 100%;
             font-weight: bold;
-            padding: 15px;
+            padding: 2px;
             background-color:white;
         }
     </style>
@@ -403,9 +403,9 @@
         function hideReply(id) {
             if (reply_map.get(id) === 1) {
                 reply_map.put(id, 0);
-                $("#reply_box" + id).hide();
                 console.log("hide!");
-                console.log("offset x : " + $("#reply_box" + id).offset().left + ", offset y : " + $("#reply_box" + id).offset().top);
+                console.log("offset x : " + $("#reply_box" + id).position().left + ", offset y : " + $("#reply_box" + id).position().top);
+                $("#reply_box" + id).hide();
             }
         }
 
