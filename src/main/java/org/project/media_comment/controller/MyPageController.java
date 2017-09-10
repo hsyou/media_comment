@@ -54,7 +54,6 @@ public class MyPageController {
 			List <MypageVO>li=service.getRecentActivity(user_id);
 			//for(MypageVO mypagevo : vo)
 			//	logger.info("activity name : "+mypagevo.getActivity_name());
-
 			//logger.info("a:"+li.get(0).getVideo_id()+"\n");
 
 			model.addAttribute("views",li);
