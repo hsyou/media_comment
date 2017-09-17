@@ -17,7 +17,11 @@
     </insert>
 
     <update id="updateANDmapOrdering">
-        UPDATE percentMap SET mapOrder=mapOrder+1 WHERE percentMapId=#{percentMapId};
+        UPDATE percentMap SET mapOrder=mapOrder+1 , mapStr = #{mapStr} WHERE percentMapId=#{percentMapId};
     </update>
+
+    <insert id="insertDefaultMap">
+        INSERT INTO percentMap(reply_id,mapStr) VALUES (#{reply_id},#{mapStr});
+    </insert>
 
 </mapper>

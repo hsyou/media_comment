@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 ﻿media_comment.iml
 .idea/workspace.xml
+=======
+﻿
+media_comment.iml
+target/
+.idea/workspace.xml
+>>>>>>> d3b899f3ad9d02ca902dbc9b29ebb00ec810f4e7

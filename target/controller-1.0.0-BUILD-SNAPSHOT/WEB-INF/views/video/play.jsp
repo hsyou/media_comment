@@ -86,7 +86,6 @@
         .float_reply {
             width: 100%;
             font-weight: bold;
-            padding: 2px;
             background-color:white;
         }
     </style>
@@ -103,7 +102,7 @@
         <iframe width="854" height="480" id="player"
                 src="https://www.youtube.com/embed/${videoVO.video_code}?enablejsapi=1"
                 frameborder="0"
-                allowfullscreen></iframe>
+                ></iframe>
     </div>
 
     <div class="panel panel-default">
@@ -351,7 +350,7 @@
                     if (time >=${best.reply_playtime} && time <= ${best.reply_playtime}+5) {
                         callReply(${best.reply_id}, "${best.reply_content}", ${best.reply_x}, ${best.reply_y}, ${best.reply_playtime});
                     } else {
-                        hideReply(${best.reply_id});
+                        hideReply(${best.reply_id},${best.reply_x},${best.reply_y});
                     }
                     </c:forEach>
 
@@ -398,14 +397,26 @@
             }
 
         }
-
         //리플 감추기
-        function hideReply(id) {
+        function hideReply(id,x,y) {
             if (reply_map.get(id) === 1) {
                 reply_map.put(id, 0);
+                var box=$("#reply_box" + id);
                 console.log("hide!");
-                console.log("offset x : " + $("#reply_box" + id).position().left + ", offset y : " + $("#reply_box" + id).position().top);
-                $("#reply_box" + id).hide();
+                console.log("offset x : " + box.position().left + ", offset y : " + box.position().top);
+//                var params = {"reply_id":id,"old_x":Math.round(x),"old_y":Math.round(y), "new_x":Math.round(box.position().left),"new_y":Math.round(box.position().top)};
+                $.ajax({
+                    url:"/setPos",
+                    type: "GET",
+                    data: {
+                        reply_id:id,old_x:Math.round(x),old_y:Math.round(y),new_x:Math.round(box.position().left),new_y:Math.round(box.position().top)
+                    },
+                    success: function (data) {
+
+                    }
+                });
+
+                box.hide();
             }
         }
 
@@ -429,6 +440,7 @@
             $("#reply_playtime").val(playtime);
             return true;
         });
+
 
         //영상 추천
         $('.video_thumb_up').on('click', function () {

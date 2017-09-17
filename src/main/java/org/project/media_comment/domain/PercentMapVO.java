@@ -15,6 +15,11 @@ public class PercentMapVO {
 
     public PercentMapVO(){};
 
+    public PercentMapVO(int reply_id, String mapStr) {
+        this.reply_id = reply_id;
+        this.mapStr = mapStr;
+    }
+
     public PercentMapVO(int percentMapId, int mapOrder, int reply_id, double[][] map, String mapStr) {
         this.percentMapId = percentMapId;
         this.mapOrder = mapOrder;

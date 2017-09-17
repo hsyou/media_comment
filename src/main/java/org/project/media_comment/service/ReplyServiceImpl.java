@@ -1,6 +1,7 @@
 package org.project.media_comment.service;
 
 import org.project.media_comment.domain.*;
+import org.project.media_comment.persistence.PercentMapDAO;
 import org.project.media_comment.persistence.ReplyDAO;
 import org.project.media_comment.util.PercentMapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class ReplyServiceImpl implements ReplyService {
     @Autowired
     private ReplyDAO replyDAO;
     @Autowired
+    private PercentMapDAO percentMapDAO;
+    @Autowired
     private PercentMapUtil percentMapUtil;
     @Autowired
     private PercentMapService percentMapService;
@@ -32,6 +35,15 @@ public class ReplyServiceImpl implements ReplyService {
     @Override
     public void insertReply(ReplyVO vo) throws Exception {
         replyDAO.insertReply(vo);
+
+
+        PercentMapVO mapVO=new PercentMapVO(vo.getReply_id(),percentMapUtil.defaultMap());
+
+        System.out.println("------------------"+mapVO.getMapStr());
+
+        percentMapDAO.insertDefaultMap(mapVO);
+
+
     }
 
     @Override
@@ -86,14 +98,17 @@ public class ReplyServiceImpl implements ReplyService {
 
         List<ReplyVO> list = replyDAO.listBestReply(video_id);
 
-        for(ReplyVO vo : list){
-
-            PercentMapVO tmp = percentMapService.getPercentMapByReplyId(vo.getReply_id());
-            int[] tmpXY = percentMapUtil.sampling(tmp.getMap());
-
-            vo.setReply_x(tmpXY[0]);
-            vo.setReply_y(tmpXY[1]);
-        }
+//        if(list!=null) {
+//
+//            for (ReplyVO vo : list) {
+//
+//                PercentMapVO tmp = percentMapService.getPercentMapByReplyId(vo.getReply_id());
+//                int[] tmpXY = percentMapUtil.sampling(tmp.getMap());
+//
+//                vo.setReply_x(tmpXY[0]);
+//                vo.setReply_y(tmpXY[1]);
+//            }
+//        }
 
         return list;
     }

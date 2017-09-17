@@ -16,7 +16,7 @@ public class PercentMapDAOImpl implements PercentMapDAO{
     private SqlSession sqlSession; //마이바티스 불러오는 호출문(Autowired 가 bean에서 SqlSession이 외부 라이브러리인데, context 확인해봐라
 
     //mapper 네임스페이스
-    private static String namespace = "org.project.media_comment.mapper.percentmapMapper.xml";
+    private static String namespace = "org.project.media_comment.mapper.percentmapMapper";
 
     @Override
     public PercentMapVO getPercentMap(int percentMapId) throws Exception {
@@ -37,4 +37,8 @@ public class PercentMapDAOImpl implements PercentMapDAO{
         sqlSession.update(namespace+".updateANDmapOrdering", vo);
     }
 
+    @Override
+    public void insertDefaultMap(PercentMapVO vo) throws Exception {
+        sqlSession.insert(namespace+".insertDefaultMap",vo);
+    }
 }
