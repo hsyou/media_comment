@@ -24,6 +24,8 @@ public class PercentMapController {
 
         //select json by id
 
+
+
         //json->map (util)
 
         //old_x,old_y,new_x,new_y와 map 으로 확률분포 계산(util)
