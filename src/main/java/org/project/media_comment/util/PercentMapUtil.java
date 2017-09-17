@@ -101,7 +101,7 @@ public class PercentMapUtil {
         JSONArray objY = new JSONArray();
         for(int i = 0; i<73; i++){
             for(int j =0; j<43; j++){
-                double value = (double)1 / (double)(73*43);
+                double value = (double)1/(double)(73*43);
                 objX.put(j,value);
             }
             objY.add(objX);
