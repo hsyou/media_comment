@@ -13,10 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class PercentMapUtil {
 
-    public int[] mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo) throws Exception {
+    public PercentMapVO mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo,int[] newpos) throws Exception {
 
         PercentMapVO tmpDTO = null;
-
         //차례대로 저장된
 
         int tmpWidth = vo.getMap().length;
@@ -55,8 +54,9 @@ public class PercentMapUtil {
         tmpMap = makeMapSumOne(tmpMap);
 
         vo.setMapStr(DoubleMaptoJSONARRAY(tmpMap).toString());
+        newpos =sampling(tmpMap);
 
-        return sampling(tmpMap);
+        return vo;
     }
 
     public double[][] makeMapSumOne(double[][] map) throws Exception {

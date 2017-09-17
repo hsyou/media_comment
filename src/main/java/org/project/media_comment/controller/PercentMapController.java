@@ -1,6 +1,7 @@
 package org.project.media_comment.controller;
 
 import org.json.simple.parser.JSONParser;
+import org.project.media_comment.domain.PercentMapVO;
 import org.project.media_comment.domain.ReplyPosVO;
 import org.project.media_comment.service.PercentMapService;
 import org.project.media_comment.util.PercentMapUtil;
@@ -34,9 +35,10 @@ public class PercentMapController {
         //old_x,old_y,new_x,new_y와 map 으로 확률분포 계산(util)
         //계산 후 새로운 위치 (x,y) 값 reply_x,reply_y에 저장
         try {
-
-            int newpos[]=util.mapRefreshByNewPoint(pos,percentMapService.getPercentMapByReplyId(reply_id));
+            int newpos[] = new int[2];
+            PercentMapVO percentMapVO = util.mapRefreshByNewPoint(pos,percentMapService.getPercentMapByReplyId(reply_id),newpos);
             ReplyPosVO vo=new ReplyPosVO(newpos[0],newpos[1]);
+            percentMapService.updateANDmapOrdering(percentMapVO);
 
         }catch (Exception e){
             e.printStackTrace();
