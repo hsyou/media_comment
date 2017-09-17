@@ -37,6 +37,7 @@ public class PercentMapController {
 
             int newpos[]=util.mapRefreshByNewPoint(pos,percentMapService.getPercentMapByReplyId(reply_id));
             ReplyPosVO vo=new ReplyPosVO(newpos[0],newpos[1]);
+            System.out.println("=-=-=-==--=-=-=-==--="+vo.getReply_x()+" , "+vo.getReply_y());
 
         }catch (Exception e){
             e.printStackTrace();

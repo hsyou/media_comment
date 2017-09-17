@@ -44,7 +44,7 @@ public class PercentMapUtil {
                 }
                 if(lastX == newX && lastY == newY) continue; // 옮기지않고 같은 위치에 댓글을 두고싶은경우 지난댓글위치의 확률만올려주고 끝낸다.
                 if(lastX + i >= 0 && lastX + i <tmpWidth && lastY + j >= 0 && lastY + j <tmpHeight){
-                    tmpMap[lastX+i][newY+j] /= 2;
+                    tmpMap[lastX+i][lastY+j] /= 2;
                 }
             }
         }

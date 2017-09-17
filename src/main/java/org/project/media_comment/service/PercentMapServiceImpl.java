@@ -25,12 +25,8 @@ public class PercentMapServiceImpl implements PercentMapService{
     @Override
     public PercentMapVO getPercentMapByReplyId(int reply_id) throws Exception {
         PercentMapVO vo = percentMapDAO.getPercentMapByReplyId(reply_id);
-        PercentMapUtil util = new PercentMapUtil();
-//        JSONParser jsonParser=new JSONParser();
-//        Object object=jsonParser.parse(vo.getMapStr());
-//        JSONArray arrayObj=(JSONArray) object;
         JSONArray arrayObj=new JSONArray(vo.getMapStr());
-        vo.setMap(util.JSONARRAYtoDoubleArray(arrayObj));
+        vo.setMap(percentMapUtil.JSONARRAYtoDoubleArray(arrayObj));
         return vo;
     }
     @Override
