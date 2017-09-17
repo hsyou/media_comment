@@ -25,6 +25,7 @@ public class PercentMapServiceImpl implements PercentMapService{
     @Override
     public PercentMapVO getPercentMapByReplyId(int reply_id) throws Exception {
         PercentMapVO vo = percentMapDAO.getPercentMapByReplyId(reply_id);
+         percentMapUtil = new PercentMapUtil();
         JSONArray arrayObj=new JSONArray(vo.getMapStr());
         vo.setMap(percentMapUtil.JSONARRAYtoDoubleArray(arrayObj));
         return vo;
@@ -34,7 +35,7 @@ public class PercentMapServiceImpl implements PercentMapService{
         percentMapDAO.makeNewMapConnectedWithNewComment(replyId,vo);
     }
     @Override
-    public void updateByResampledMap(PercentMapVO vo)throws Exception{
+    public void updateANDmapOrdering(PercentMapVO vo)throws Exception{
 
         int[] dummy = new int[4];
 

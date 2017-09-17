@@ -36,13 +36,16 @@ public class PercentMapUtil {
             for(int j = -2; j<3; j++){
                 //정확한 포인트 에서부터 등차적으로 주위 포인트들에게도 addScore를 나눠준다. 멀어질수록 addScore는 줄어듬.,
                 if(newX + i >= 0 && newX + i <tmpWidth && newY + j >= 0 && newY + j <tmpHeight){
+
                     if(i == 0 && j==0){
                         tmpMap[newX+i][newY+j] += (tmpMap[newX+i][newY+j]*vo.getMapOrder() + addScore)/(vo.getMapOrder()+1);
                     }else {
                         tmpMap[newX+i][newY+j] += (tmpMap[newX+i][newY+j]*vo.getMapOrder()) + addScore / (Math.pow(i, 2) + Math.pow(j, 2));
                     }
                 }
+
                 if(lastX == newX && lastY == newY) continue; // 옮기지않고 같은 위치에 댓글을 두고싶은경우 지난댓글위치의 확률만올려주고 끝낸다.
+
                 if(lastX + i >= 0 && lastX + i <tmpWidth && lastY + j >= 0 && lastY + j <tmpHeight){
                     tmpMap[lastX+i][lastY+j] /= 2;
                 }
@@ -50,6 +53,8 @@ public class PercentMapUtil {
         }
 
         tmpMap = makeMapSumOne(tmpMap);
+
+        vo.setMapStr(DoubleMaptoJSONARRAY(tmpMap).toString());
 
         return sampling(tmpMap);
     }
@@ -101,8 +106,9 @@ public class PercentMapUtil {
         JSONArray objY = new JSONArray();
         for(int i = 0; i<73; i++){
             for(int j =0; j<43; j++){
-                double value = (double)1 / (double)(73*43);
-                objX.put(j+"",value);
+                double value = (double)1/(double)(73*43);
+                objX.put(j + "",value);
+
             }
             objY.put(objX);
         }

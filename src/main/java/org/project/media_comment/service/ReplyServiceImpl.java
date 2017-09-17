@@ -112,4 +112,9 @@ public class ReplyServiceImpl implements ReplyService {
 
         return list;
     }
+
+    @Override
+    public void updateReplyPos(ReplyPosVO vo) throws Exception {
+        replyDAO.updateReplyPos(vo);
+    }
 }

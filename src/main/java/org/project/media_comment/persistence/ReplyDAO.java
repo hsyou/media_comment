@@ -1,9 +1,6 @@
 package org.project.media_comment.persistence;
 
-import org.project.media_comment.domain.ReplyCountVO;
-import org.project.media_comment.domain.ReplyVO;
-import org.project.media_comment.domain.ReplyVoteVO;
-import org.project.media_comment.domain.VideoUserVO;
+import org.project.media_comment.domain.*;
 
 import java.util.List;
 
@@ -20,4 +17,5 @@ public interface ReplyDAO {
     public void updateReplyVote(ReplyVoteVO vo)throws Exception;
     public void updateReplyCount(ReplyCountVO vo)throws Exception;
     public List<ReplyVO> listBestReply(int video_id)throws Exception;
+    public void updateReplyPos(ReplyPosVO vo)throws Exception;
 }

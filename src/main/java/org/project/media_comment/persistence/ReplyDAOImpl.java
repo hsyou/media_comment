@@ -1,10 +1,7 @@
 package org.project.media_comment.persistence;
 
 import org.apache.ibatis.session.SqlSession;
-import org.project.media_comment.domain.ReplyCountVO;
-import org.project.media_comment.domain.ReplyVO;
-import org.project.media_comment.domain.ReplyVoteVO;
-import org.project.media_comment.domain.VideoUserVO;
+import org.project.media_comment.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -63,5 +60,10 @@ public class ReplyDAOImpl implements ReplyDAO {
     @Override
     public List<ReplyVO> listBestReply(int video_id) throws Exception {
         return session.selectList(namespace+".listBestReply",video_id);
+    }
+
+    @Override
+    public void updateReplyPos(ReplyPosVO vo) throws Exception {
+        session.update(namespace+".updateReplyPos",vo);
     }
 }

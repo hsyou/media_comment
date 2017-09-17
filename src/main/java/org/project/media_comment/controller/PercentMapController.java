@@ -1,8 +1,10 @@
 package org.project.media_comment.controller;
 
 import org.json.simple.parser.JSONParser;
+import org.project.media_comment.domain.PercentMapVO;
 import org.project.media_comment.domain.ReplyPosVO;
 import org.project.media_comment.service.PercentMapService;
+import org.project.media_comment.service.ReplyService;
 import org.project.media_comment.util.PercentMapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,8 @@ public class PercentMapController {
     @Autowired
     private PercentMapService percentMapService;
 
+    @Autowired
+    private ReplyService replyService;
 
     @Autowired
     private PercentMapUtil util;
@@ -35,9 +39,12 @@ public class PercentMapController {
         //계산 후 새로운 위치 (x,y) 값 reply_x,reply_y에 저장
         try {
 
-            int newpos[]=util.mapRefreshByNewPoint(pos,percentMapService.getPercentMapByReplyId(reply_id));
+            PercentMapVO mapVO=percentMapService.getPercentMapByReplyId(reply_id);
+            int newpos[]=util.mapRefreshByNewPoint(pos,mapVO);
             ReplyPosVO vo=new ReplyPosVO(newpos[0],newpos[1]);
-            System.out.println("=-=-=-==--=-=-=-==--="+vo.getReply_x()+" , "+vo.getReply_y());
+            replyService.updateReplyPos(vo);
+
+            percentMapService.updateANDmapOrdering(mapVO);
 
         }catch (Exception e){
             e.printStackTrace();
