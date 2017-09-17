@@ -1,5 +1,6 @@
 package org.project.media_comment.service;
 
+import org.json.JSONArray;
 import org.project.media_comment.domain.PercentMapVO;
 import org.project.media_comment.persistence.PercentMapDAO;
 import org.project.media_comment.util.PercentMapUtil;
@@ -19,6 +20,18 @@ public class PercentMapServiceImpl implements PercentMapService{
     @Override
     public PercentMapVO getPercentMap(int percentMapId) throws Exception {
         return percentMapDAO.getPercentMap(percentMapId);
+    }
+
+    @Override
+    public PercentMapVO getPercentMapByReplyId(int reply_id) throws Exception {
+        PercentMapVO vo = percentMapDAO.getPercentMapByReplyId(reply_id);
+        PercentMapUtil util = new PercentMapUtil();
+//        JSONParser jsonParser=new JSONParser();
+//        Object object=jsonParser.parse(vo.getMapStr());
+//        JSONArray arrayObj=(JSONArray) object;
+        JSONArray arrayObj=new JSONArray(vo.getMapStr());
+        vo.setMap(util.JSONARRAYtoDoubleArray(arrayObj));
+        return vo;
     }
     @Override
     public void makeNewMapConnectedWithNewComment(int replyId,PercentMapVO vo) throws Exception {

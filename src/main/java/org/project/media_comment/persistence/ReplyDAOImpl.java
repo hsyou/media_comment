@@ -35,8 +35,9 @@ public class ReplyDAOImpl implements ReplyDAO {
     }
 
     @Override
-    public void insertReply(ReplyVO vo) throws Exception {
+    public int insertReply(ReplyVO vo) throws Exception {
         session.insert(namespace+".insertReply",vo);
+        return vo.getReply_id();
     }
 
     @Override

@@ -1,5 +1,7 @@
 package org.project.media_comment.util;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.project.media_comment.domain.PercentMapVO;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PercentMapUtil {
 
-    public PercentMapVO mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo) throws Exception {
+    public int[] mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo) throws Exception {
 
         PercentMapVO tmpDTO = null;
 
@@ -44,15 +46,12 @@ public class PercentMapUtil {
                 if(lastX + i >= 0 && lastX + i <tmpWidth && lastY + j >= 0 && lastY + j <tmpHeight){
                     tmpMap[lastX+i][newY+j] /= 2;
                 }
-
             }
         }
 
         tmpMap = makeMapSumOne(tmpMap);
 
-        tmpDTO.setMap(tmpMap);
-
-        return tmpDTO;
+        return sampling(tmpMap);
     }
 
     public double[][] makeMapSumOne(double[][] map) throws Exception {
@@ -95,6 +94,49 @@ public class PercentMapUtil {
         }
 
         return null;
+    }
+
+    public String defaultMap(){
+        JSONObject objX = new JSONObject();
+        JSONArray objY = new JSONArray();
+        for(int i = 0; i<73; i++){
+            for(int j =0; j<43; j++){
+                double value = (double)1 / (double)(73*43);
+                objX.put(j+"",value);
+            }
+            objY.put(objX);
+        }
+        return objY.toString();
+    }
+
+    public double[][] JSONARRAYtoDoubleArray(JSONArray jsonArray){
+        double[][] mapTmp = new double[43][73];
+        JSONObject tmpObj = new JSONObject();
+
+        for(int i = 0; i<73; i++){
+
+            tmpObj = (JSONObject) jsonArray.get(i);
+
+            for(int j = 0;j<43; j++){
+
+                mapTmp[j][i] = (double)tmpObj.get(j+"");
+
+            }
+        }
+        return mapTmp;
+    }
+
+    public JSONArray DoubleMaptoJSONARRAY(double[][] map){
+        JSONObject objX = new JSONObject();
+        JSONArray objY = new JSONArray();
+        for(int i = 0; i<73; i++){
+            for(int j =0; j<43; j++){
+                double value = map[j][i];
+                objX.put(j+"",value);
+            }
+            objY.put(objX);
+        }
+        return objY;
     }
 
 }

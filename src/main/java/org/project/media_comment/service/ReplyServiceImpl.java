@@ -1,10 +1,9 @@
 package org.project.media_comment.service;
 
-import org.project.media_comment.domain.ReplyCountVO;
-import org.project.media_comment.domain.ReplyVO;
-import org.project.media_comment.domain.ReplyVoteVO;
-import org.project.media_comment.domain.VideoUserVO;
+import org.project.media_comment.domain.*;
+import org.project.media_comment.persistence.PercentMapDAO;
 import org.project.media_comment.persistence.ReplyDAO;
+import org.project.media_comment.util.PercentMapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +17,12 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Autowired
     private ReplyDAO replyDAO;
+    @Autowired
+    private PercentMapDAO percentMapDAO;
+    @Autowired
+    private PercentMapUtil percentMapUtil;
+    @Autowired
+    private PercentMapService percentMapService;
 
     @Override
     public List<ReplyVO> listAllReply(int video_id,int user_id) throws Exception {
@@ -25,12 +30,20 @@ public class ReplyServiceImpl implements ReplyService {
             return replyDAO.listAllReply(video_id);
         }
             return replyDAO.listAllReplyLogin(new VideoUserVO(user_id,video_id));
-
     }
 
     @Override
     public void insertReply(ReplyVO vo) throws Exception {
         replyDAO.insertReply(vo);
+
+
+        PercentMapVO mapVO=new PercentMapVO(vo.getReply_id(),percentMapUtil.defaultMap());
+
+        System.out.println("------------------"+mapVO.getMapStr());
+
+        percentMapDAO.insertDefaultMap(mapVO);
+
+
     }
 
     @Override
@@ -83,6 +96,20 @@ public class ReplyServiceImpl implements ReplyService {
     @Override
     public List<ReplyVO> listBestReply(int video_id) throws Exception {
 
-        return replyDAO.listBestReply(video_id);
+        List<ReplyVO> list = replyDAO.listBestReply(video_id);
+
+//        if(list!=null) {
+//
+//            for (ReplyVO vo : list) {
+//
+//                PercentMapVO tmp = percentMapService.getPercentMapByReplyId(vo.getReply_id());
+//                int[] tmpXY = percentMapUtil.sampling(tmp.getMap());
+//
+//                vo.setReply_x(tmpXY[0]);
+//                vo.setReply_y(tmpXY[1]);
+//            }
+//        }
+
+        return list;
     }
 }

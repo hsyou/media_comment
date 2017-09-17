@@ -3,8 +3,10 @@ package org.project.media_comment.controller;
 import java.util.List;
 import java.util.Locale;
 
+import org.project.media_comment.domain.PercentMapVO;
 import org.project.media_comment.domain.VideoVO;
 import org.project.media_comment.service.HomeService;
+import org.project.media_comment.util.PercentMapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +30,19 @@ public class HomeController {
 	
 	@Autowired
 	private HomeService homeService;
+
+	@Autowired
+	private PercentMapUtil percentMapUtil;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		try {
+
+			PercentMapVO percentMapVO = new PercentMapVO(0,0,0,null,"");
+			percentMapVO.setMapStr(percentMapUtil.defaultMap());
+			System.out.println(percentMapVO.getMapStr().toString());
+
 			List<VideoVO> list = homeService.listAllVideo();
 			if(list!=null)
 				model.addAttribute("list", list);
