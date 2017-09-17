@@ -44,7 +44,7 @@ public class PercentMapServiceImpl implements PercentMapService{
 
         percentMapUtil.mapRefreshByNewPoint(dummy,vo);
 
-        percentMapDAO.updateByResampledMap(vo);
+        percentMapDAO.updateANDmapOrdering(vo);
     }
 
 

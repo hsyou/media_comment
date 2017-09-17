@@ -33,9 +33,10 @@ public class PercentMapDAOImpl implements PercentMapDAO{
         sqlSession.insert(namespace+".makeNewMapConnectedWithNewComment",vo);
     }
     @Override
-    public void updateByResampledMap(PercentMapVO vo)throws Exception{
-        sqlSession.update(namespace+".updateByResampledMap", vo);
+    public void updateANDmapOrdering(PercentMapVO vo)throws Exception{
+        sqlSession.update(namespace+".updateANDmapOrdering", vo);
     }
+
     @Override
     public void insertDefaultMap(PercentMapVO vo) throws Exception {
         sqlSession.insert(namespace+".insertDefaultMap",vo);

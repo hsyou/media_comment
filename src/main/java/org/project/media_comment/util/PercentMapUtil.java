@@ -39,7 +39,7 @@ public class PercentMapUtil {
                     if(i == 0 && j==0){
                         tmpMap[newX+i][newY+j] += (tmpMap[newX+i][newY+j]*vo.getMapOrder() + addScore)/(vo.getMapOrder()+1);
                     }else {
-                        tmpMap[newX+i][newY+j] += addScore / (Math.pow(i, 2) + Math.pow(j, 2));
+                        tmpMap[newX+i][newY+j] += (tmpMap[newX+i][newY+j]*vo.getMapOrder()) + addScore / (Math.pow(i, 2) + Math.pow(j, 2));
                     }
                 }
                 if(lastX == newX && lastY == newY) continue; // 옮기지않고 같은 위치에 댓글을 두고싶은경우 지난댓글위치의 확률만올려주고 끝낸다.

@@ -16,7 +16,7 @@
         INSERT INTO percentMap(percentMapId, reply_id, mapStr, mapOrder) VALUES (#{percentMapId},#{reply_id},#{mapStr},#{mapOrder})
     </insert>
 
-    <update id="updateByResampledMap">
+    <update id="updateANDmapOrdering">
         UPDATE percentMap SET mapOrder=mapOrder+1 WHERE percentMapId=#{percentMapId};
     </update>
 

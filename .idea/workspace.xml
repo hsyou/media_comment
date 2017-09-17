@@ -7,244 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c7e6536-c371-4570-8433-18e2dbbf8456" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/HomeController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/MyPageController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/PercentMapController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/VideoController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/HashtagVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/MyInfoVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/MypageVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/PercentMapVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/ReplyCountVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/ReplyVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/ReplyVoteVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/UserVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/VideoCountVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/VideoUserVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/VideoVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/VideoVoteVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/interceptor/AuthInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/interceptor/LoginInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/HashtagDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/HashtagDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/HomeDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/HomeDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/MypageDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/MypageDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/UserDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/UserDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/VideoDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/VideoDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/HashtagService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/HashtagServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/HomeService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/HomeServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/MypageService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/MypageServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/UserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/UserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/VideoService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/VideoServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/HomeController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/MyPageController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/PercentMapController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/VideoController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/HashtagVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/MyInfoVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/MypageVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/PercentMapVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/ReplyCountVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/ReplyVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/ReplyVoteVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/UserVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/VideoCountVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/VideoUserVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/VideoVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/VideoVoteVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/interceptor/AuthInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/interceptor/LoginInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/HashtagDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/HashtagDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/HomeDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/HomeDaoImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/MypageDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/MypageDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/UserDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/UserDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/VideoDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/VideoDAOImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/HashtagService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/HashtagServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/HomeService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/HomeServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/MypageService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/MypageServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/UserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/UserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/VideoService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/VideoServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/util/PercentMapUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aopalliance-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aspectjrt-1.6.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.5.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/bcpkix-jdk15on-1.55.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/bcprov-jdk15on-1.55.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/commons-codec-1.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/commons-fileupload-1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/commons-io-2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/commons-lang-2.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/commons-logging-1.1.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/ehcache-2.10.2.2.21.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/httpclient-4.3.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/httpcore-4.3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.7.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-core-2.7.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-core-asl-1.9.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-databind-2.7.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-dataformat-xml-2.7.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jackson-module-jaxb-annotations-2.7.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/javax.servlet-api-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.6.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/json-simple-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/log4j-1.2.15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/log4jdbc-log4j2-jdbc4-1.16.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/mybatis-3.2.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/mybatis-spring-1.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.35.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-api-1.6.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-aop-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-beans-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-context-support-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-core-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-expression-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-jdbc-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-security-config-4.0.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-security-core-4.0.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-security-jwt-1.0.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-security-oauth2-2.0.10.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-security-web-4.0.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-test-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-tx-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-web-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.1.7.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/lib/stax2-api-3.1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/img/background-logon-screen-windows-web-desktop-wallpaper-abstract.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/img/sample.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/MyInfoVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/ReplyPosVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/log4jdbc.log4j2.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/hashtagMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/homeMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/mypageMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/percentmapMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/replyMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/userMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mappers/videoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4jdbc.log4j2.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/hashtagMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/homeMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/mypageMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/percentmapMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/replyMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/userMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/videoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/error.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home/home.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home/home2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/mypage/mylists.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/user/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/user/sign_up.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/video/play.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/video/play2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/video/upload.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/footer.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/header.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/home.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/home.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/mylists.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/assets/supersized.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/resources/css/test.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/log4j.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sql/mediacomment.exerd" afterPath="$PROJECT_DIR$/sql/media_comment.exerd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/media_comment_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/media_comment_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/MyPageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/MyPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/HashtagVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/HashtagVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/PercentMapVO.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/PercentMapVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAO.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/util/PercentMapUtil.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/util/PercentMapUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/PercentMapVO.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/PercentMapVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAO.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/PercentMapDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapServiceImpl.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/util/PercentMapUtil.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/util/PercentMapUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/MypageService.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/MypageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/MypageServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/MypageServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapService.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/mypageMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/mypageMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage/mylists.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage/mylists.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/percentmapMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/percentmapMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -259,8 +40,8 @@
       <file leaf-file-name="PercentMapDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+            <state relative-caret-position="630">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -269,8 +50,8 @@
       <file leaf-file-name="PercentMapServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="36" column="97" lean-forward="true" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="97" />
+            <state relative-caret-position="712">
+              <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -278,24 +59,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PercentMapUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PercentMapUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+            <state relative-caret-position="354">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#makeMapSumOne#0;class#PercentMapUtil#0" expanded="false" />
+                <marker date="1505642251242" expanded="false" signature="1980:2334" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PercentMapDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -367,14 +158,14 @@
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -390,11 +181,6 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="401" />
-    <option name="width" value="1527" />
-    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -417,6 +203,11 @@
             <path>
               <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
               <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
@@ -538,11 +329,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.project.media_comment.domain" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -985,9 +771,6 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0c7e6536-c371-4570-8433-18e2dbbf8456" name="Default" comment="" />
@@ -1000,12 +783,12 @@
       <workItem from="1505043472984" duration="5690000" />
       <workItem from="1505631296991" duration="2215000" />
       <workItem from="1505634173106" duration="2091000" />
-      <workItem from="1505636400263" duration="4127000" />
+      <workItem from="1505636400263" duration="4417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17697000" />
+    <option name="totallyTimeSpent" value="17987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1057,10 +840,6 @@
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAO.java">
@@ -1128,6 +907,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3213">
           <caret line="153" column="25" lean-forward="true" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,13 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="262" column="26" lean-forward="false" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1398,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -1446,11 +1211,11 @@
         <state relative-caret-position="324">
           <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding>
-            <marker date="1505637484606" expanded="true" signature="342:401" ph="select * fro... USERS" />
-            <marker date="1505637484606" expanded="true" signature="531:582" ph="select * fro... USERS" />
-            <marker date="1505637484606" expanded="true" signature="713:836" ph="INSERT INTO percentMap... " />
-            <marker date="1505637484606" expanded="true" signature="899:975" ph="UPDATE perce... " />
-            <marker date="1505637484606" expanded="true" signature="1035:1105" ph="INSERT INTO percentMap... " />
+            <marker date="1505642251234" expanded="true" signature="342:401" ph="select * fro... USERS" />
+            <marker date="1505642251234" expanded="true" signature="531:582" ph="select * fro... USERS" />
+            <marker date="1505642251234" expanded="true" signature="713:836" ph="INSERT INTO percentMap... " />
+            <marker date="1505642251234" expanded="true" signature="899:975" ph="UPDATE perce... " />
+            <marker date="1505642251234" expanded="true" signature="1035:1105" ph="INSERT INTO percentMap... " />
           </folding>
         </state>
       </provider>
@@ -1463,19 +1228,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="262" column="26" lean-forward="false" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="46" column="43" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1487,111 +1286,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="36" column="97" lean-forward="true" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        <state relative-caret-position="354">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeMapSumOne#0;class#PercentMapUtil#0" expanded="false" />
+            <marker date="1505642251242" expanded="false" signature="1980:2334" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>media_comment:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>media_comment</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>com.googlecode.json-simple:json-simple:1.1</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
