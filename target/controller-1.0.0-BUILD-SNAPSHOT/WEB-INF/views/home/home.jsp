@@ -100,8 +100,6 @@
                                                      class="img-responsive" height="130px"/>
                                                     ${vo.video_title}
                                                 <i class="fa fa-play-circle-o"></i>
-                                                <span class="duration">03:15</span>
-                                                <span class="time">1 ㄴ</span>
                                             </a>
                                         </li>
                                     </c:forEach>

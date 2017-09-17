@@ -20,6 +20,12 @@ public class PercentMapServiceImpl implements PercentMapService{
     public PercentMapVO getPercentMap(int percentMapId) throws Exception {
         return percentMapDAO.getPercentMap(percentMapId);
     }
+
+    @Override
+    public PercentMapVO getPercentMapByReplyId(int reply_id) throws Exception {
+        return percentMapDAO.getPercentMapByReplyId(reply_id);
+    }
+
     @Override
     public void makeNewMapConnectedWithNewComment(int replyId,PercentMapVO vo) throws Exception {
         percentMapDAO.makeNewMapConnectedWithNewComment(replyId,vo);

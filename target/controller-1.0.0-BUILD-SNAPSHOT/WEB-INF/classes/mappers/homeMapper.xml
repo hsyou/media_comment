@@ -15,7 +15,7 @@
 	</select>
 
 	<select id="listVideoByCondition" resultType="VideoVO">
-		SELECT * FROM video ORDER BY ${condition} DESC;
+		SELECT * FROM video ORDER BY ${condition} DESC limit 4;
 	</select>
 
 </mapper>

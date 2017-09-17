@@ -22,6 +22,12 @@ public class PercentMapDAOImpl implements PercentMapDAO{
     public PercentMapVO getPercentMap(int percentMapId) throws Exception {
         return sqlSession.selectOne(namespace+".getPercentMap", percentMapId);
     }
+
+    @Override
+    public PercentMapVO getPercentMapByReplyId(int reply_id) throws Exception {
+        return sqlSession.selectOne(namespace+".getPercentMapByReplyId" , reply_id);
+    }
+
     @Override
     public void makeNewMapConnectedWithNewComment(int replyId,PercentMapVO vo) throws Exception {
         sqlSession.insert(namespace+".makeNewMapConnectedWithNewComment",vo);

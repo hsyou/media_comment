@@ -24,7 +24,7 @@ public class PercentMapVO {
         this.percentMapId = percentMapId;
         this.mapOrder = mapOrder;
         this.reply_id = reply_id;
-        this.map = map;
+        this.map = map; // [731][431] 짜리로해야함 상대좌표 맥스값임.
         this.mapStr = mapStr;
     }
     public PercentMapVO(int percentMapId, int mapOrder, int reply_id, String mapStr) {

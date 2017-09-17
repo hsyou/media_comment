@@ -77,12 +77,17 @@
             color: #2a803d;
         }
 
-        #float_reply {
-            font-weight: bold;
+        .reply_box {
             position: absolute;
             z-index: 999;
-            margin: 2%;
-            background-color: white;
+            padding: 25px;
+        }
+
+        .float_reply {
+            width: 100%;
+            font-weight: bold;
+            padding: 2px;
+            background-color:white;
         }
     </style>
 </head>
@@ -99,8 +104,6 @@
                 src="https://www.youtube.com/embed/${videoVO.video_code}?enablejsapi=1"
                 frameborder="0"
                 allowfullscreen></iframe>
-        <div id="reply_box">
-            <span id="float_reply"></span></div>
     </div>
 
     <div class="panel panel-default">
@@ -151,7 +154,6 @@
                 <input type="hidden" name="video_id" value="${videoVO.video_id}">
                 <button type="button" class="btn btn-default" onclick="refresh()"><span
                         class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-
                 <%
                     if (vo != null) {
                 %>
@@ -189,6 +191,7 @@
                         </button>
                         <span class="like_count">${reply.reply_like_count}</span>
                         <button type="button"
+
                                 <c:choose>
                                     <c:when test="${reply.reply_vote_flag eq -1}">class="btn btn-primary thumb_down"</c:when>
                                     <c:otherwise>class="btn btn-default thumb_down"</c:otherwise>
@@ -213,28 +216,148 @@
 
 
     <script>
+
+        Map = function () {
+
+            this.map = new Object();
+
+        };
+
+        Map.prototype = {
+
+            put: function (key, value) {
+
+                this.map[key] = value;
+
+            },
+
+            get: function (key) {
+
+                return this.map[key];
+
+            },
+
+            containsKey: function (key) {
+
+                return key in this.map;
+
+            },
+
+            containsValue: function (value) {
+
+                for (var prop in this.map) {
+
+                    if (this.map[prop] == value) return true;
+
+                }
+
+                return false;
+
+            },
+
+            isEmpty: function () {
+
+                return (this.size() == 0);
+
+            },
+
+            clear: function () {
+
+                for (var prop in this.map) {
+
+                    delete this.map[prop];
+
+                }
+
+            },
+
+            remove: function (key) {
+
+                delete this.map[key];
+
+            },
+
+            keys: function () {
+
+                var keys = new Array();
+
+                for (var prop in this.map) {
+
+                    keys.push(prop);
+
+                }
+
+                return keys;
+
+            },
+
+            values: function () {
+
+                var values = new Array();
+
+                for (var prop in this.map) {
+
+                    values.push(this.map[prop]);
+
+                }
+
+                return values;
+
+            },
+
+            size: function () {
+
+                var count = 0;
+
+                for (var prop in this.map) {
+
+                    count++;
+
+                }
+
+                return count;
+
+            }
+
+        };
+
+
         var player;
+
+        var time;
+
+        var counter_flag = true;
 
         //api ready
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player');
-            var offset = $("#player").offset();
-//            $("#float_reply").offset = ({left: offset.left + 200, top: offset.top + 100});
-//            $("#float_reply").hide();
-            $("#float_reply").draggable({
-                containment: $("video_box") // 부모요소 안에 종속
-            });
-
-            //리플 띄울시간 계산 (예제)
-            setInterval(function () {
-                var time = Math.floor(player.getCurrentTime());
-                <c:forEach var="best" items="${best}">
-                if (time == ${best.reply_playtime}) {
-                    $("#float_reply").text("${best.reply_content}");
-                    showReply();
+            player.addEventListener('onStateChange', function (e) {
+                switch (e.data) {
+                    case 0://종료
+                        break;
+                    case 1://재생중
+                        counter_flag = true;
+                        break;
+                    case 2://일시정지
+                        counter_flag = false;
                 }
-                </c:forEach>
-            }, 100);
+            });
+            var offset = $("#player").offset();
+            //타이머
+            setInterval(function () {
+                if (counter_flag) {
+                    time = Math.floor(player.getCurrentTime());
+                    <c:forEach var="best" items="${best}">
+                    if (time >=${best.reply_playtime} && time <= ${best.reply_playtime}+5) {
+                        callReply(${best.reply_id}, "${best.reply_content}", ${best.reply_x}, ${best.reply_y}, ${best.reply_playtime});
+                    } else {
+                        hideReply(${best.reply_id});
+                    }
+                    </c:forEach>
+
+                }
+            }, 1000);
+
         }
 
         //댓글 입력 플래그
@@ -255,12 +378,41 @@
             }
         });
 
-        //리플 5초간 띄우기
-        function showReply() {
-            $("#float_reply").show();
-//            setTimeout(function () {
-//                $("#float_reply").hide();
-//            }, 5000);
+        var reply_map = new Map();
+
+        //리플 관리
+        function callReply(id, comment, x, y) {
+            if (reply_map.containsKey(id)) {
+                showReply(id);
+                reply_map.put(id, 1);
+            } else {
+                //create
+                reply_map.put(id, 1);
+
+                $('<div id="reply_box' + id + '" class="reply_box"><span id="float_reply' + id + '" class="float_reply">' + comment + '</span></div>').appendTo("#video_box").draggable({
+                    containment: $("#video_box")// 부모요소 안에 종속
+                });
+
+                $("#reply_box" + id).offset({left: $("#player").offset().left + x, top: $("#player").offset().top + y});
+
+            }
+
+        }
+
+        //리플 감추기
+        function hideReply(id) {
+            if (reply_map.get(id) === 1) {
+                reply_map.put(id, 0);
+                console.log("hide!");
+                console.log("offset x : " + $("#reply_box" + id).position().left + ", offset y : " + $("#reply_box" + id).position().top);
+                $("#reply_box" + id).hide();
+            }
+        }
+
+        //리플 보여주기
+        function showReply(id) {
+            $("#reply_box" + id).show();
+            reply_map.put(id, 1);
         }
 
         //재생시간 이동
@@ -292,7 +444,6 @@
                 data: params,
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 success: function (result) {
-                    console.log("result : " + result);
                     var like_count = btn.siblings(".like_count");
                     var dislike_count = btn.siblings(".dislike_count");
                     switch (result) {
