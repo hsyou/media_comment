@@ -12,6 +12,7 @@ public class PercentMapVO {
     private int reply_id;
     private double[][] map;
     private String mapStr;
+    private int[] newpos;
 
     public PercentMapVO(){};
 
@@ -34,6 +35,15 @@ public class PercentMapVO {
         this.reply_id = reply_id;
         this.mapStr = mapStr;
     }
+
+    public int[] getNewpos() {
+        return newpos;
+    }
+
+    public void setNewpos(int[] newpos) {
+        this.newpos = newpos;
+    }
+
     public String getMapStr() {
         return mapStr;
     }

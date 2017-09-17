@@ -348,9 +348,9 @@
                     time = Math.floor(player.getCurrentTime());
                     <c:forEach var="best" items="${best}">
                     if (time >=${best.reply_playtime} && time <= ${best.reply_playtime}+5) {
-                        callReply(${best.reply_id}, "${best.reply_content}", ${best.reply_x}, ${best.reply_y}, ${best.reply_playtime});
+                        callReply(${best.reply_id}, "${best.reply_content}", ${best.reply_y},${best.reply_x}, ${best.reply_playtime});
                     } else {
-                        hideReply(${best.reply_id},${best.reply_x},${best.reply_y});
+                        hideReply(${best.reply_id},${best.reply_y},${best.reply_x});
                     }
                     </c:forEach>
 

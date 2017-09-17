@@ -13,25 +13,33 @@ import org.springframework.stereotype.Component;
 @Component
 public class PercentMapUtil {
 
-    public int[] mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo) throws Exception {
+    public PercentMapVO mapRefreshByNewPoint(int[] LatestAndNewPoints, PercentMapVO vo) throws Exception {
 
         PercentMapVO tmpDTO = null;
-
         //차례대로 저장된
 
         int tmpWidth = vo.getMap().length;
         int tmpHeight = vo.getMap()[0].length;
         int mapSize = tmpHeight*tmpWidth;
-        double addScore = 30/mapSize; // 여기서 30 이라는 수는 새롭게 선택된 좌표는 30칸짜리 가치가 있는 새로운 좌표라는 뜻으로 바꿔주어도 무방하다.
+        double addScore = 100/mapSize; // 여기서 30 이라는 수는 새롭게 선택된 좌표는 30칸짜리 가치가 있는 새로운 좌표라는 뜻으로 바꿔주어도 무방하다.
 
         double[][] tmpMap = vo.getMap();
 
-        int lastX = LatestAndNewPoints[0];
-        int lastY = LatestAndNewPoints[1];
+        int lastX = LatestAndNewPoints[0]/10;
+        int lastY = LatestAndNewPoints[1]/10;
 
-        int newX = LatestAndNewPoints[2];
-        int newY = LatestAndNewPoints[3];
+        int newX = LatestAndNewPoints[2]/10;
+        int newY = LatestAndNewPoints[3]/10;
 
+        for(int i = 0; i<43; i++){
+            for(int j =0; j<73; j++){
+
+                System.out.printf("%.7f ",tmpMap[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println("---------------------------------------");
         for(int i = -2; i<3; i++){
             for(int j = -2; j<3; j++){
                 //정확한 포인트 에서부터 등차적으로 주위 포인트들에게도 addScore를 나눠준다. 멀어질수록 addScore는 줄어듬.,
@@ -54,9 +62,18 @@ public class PercentMapUtil {
 
         tmpMap = makeMapSumOne(tmpMap);
 
-        vo.setMapStr(DoubleMaptoJSONARRAY(tmpMap).toString());
+        for(int i = 0; i<43; i++){
+            for(int j =0; j<73; j++){
 
-        return sampling(tmpMap);
+                System.out.printf("%.7f ",tmpMap[i][j]);
+            }
+            System.out.println();
+        }
+
+        vo.setMapStr(DoubleMaptoJSONARRAY(tmpMap).toString());
+        vo.setNewpos(sampling(tmpMap));
+
+        return vo;
     }
 
     public double[][] makeMapSumOne(double[][] map) throws Exception {
@@ -69,11 +86,15 @@ public class PercentMapUtil {
             }
         }
 
+        System.out.println(sum+"-----------------------------");
+
         for(int i =0; i<map.length; i++){
             for(int j =0; j<map[0].length; j++){
                 map[i][j]/=sum;
             }
         }
+
+        System.out.println(map[0][0]+"-----------------------------");
 
         return map;
     }
@@ -89,8 +110,8 @@ public class PercentMapUtil {
                 sum += map[i][j];
 
                 if(randomNum < sum){
-                    newPoint_XandY[0] = i;
-                    newPoint_XandY[1] = j;
+                    newPoint_XandY[0] = i*10;
+                    newPoint_XandY[1] = j*10;
 
                     return newPoint_XandY;
                 }
@@ -103,44 +124,44 @@ public class PercentMapUtil {
 
     public String defaultMap(){
         JSONObject objX = new JSONObject();
-        JSONArray objY = new JSONArray();
-        for(int i = 0; i<73; i++){
-            for(int j =0; j<43; j++){
+        JSONObject objY = new JSONObject();
+        for(int i = 0; i<43; i++){
+            for(int j =0; j<73; j++){
                 double value = (double)1/(double)(73*43);
                 objX.put(j + "",value);
 
             }
-            objY.put(objX);
+            objY.put(i+"",objX);
         }
         return objY.toString();
     }
 
-    public double[][] JSONARRAYtoDoubleArray(JSONArray jsonArray){
+    public double[][] JSONARRAYtoDoubleArray(JSONObject jsonObject){
         double[][] mapTmp = new double[43][73];
         JSONObject tmpObj = new JSONObject();
 
-        for(int i = 0; i<73; i++){
+        for(int i = 0; i<43; i++){
 
-            tmpObj = (JSONObject) jsonArray.get(i);
+            tmpObj = (JSONObject) jsonObject.get(i+"");
 
-            for(int j = 0;j<43; j++){
+            for(int j = 0;j<73; j++){
 
-                mapTmp[j][i] = (double)tmpObj.get(j+"");
+                mapTmp[i][j] = (double)tmpObj.get(j+"");
 
             }
         }
         return mapTmp;
     }
 
-    public JSONArray DoubleMaptoJSONARRAY(double[][] map){
+    public JSONObject DoubleMaptoJSONARRAY(double[][] map){
         JSONObject objX = new JSONObject();
-        JSONArray objY = new JSONArray();
-        for(int i = 0; i<73; i++){
-            for(int j =0; j<43; j++){
-                double value = map[j][i];
+        JSONObject objY = new JSONObject();
+        for(int i = 0; i<43; i++){
+            for(int j =0; j<73; j++){
+                double value = map[i][j];
                 objX.put(j+"",value);
             }
-            objY.put(objX);
+            objY.put(i+"",objX);
         }
         return objY;
     }

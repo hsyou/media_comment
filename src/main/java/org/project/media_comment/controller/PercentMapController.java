@@ -32,19 +32,18 @@ public class PercentMapController {
     @ResponseBody
     public void test(@RequestParam("reply_id")int reply_id,@RequestParam("old_x")int old_x,@RequestParam("old_y")int old_y,@RequestParam("new_x")int new_x,@RequestParam("new_y")int new_y) {
 
-        int pos[]={old_x,old_y,new_x,new_y};
+        int pos[]={old_y,old_x,new_y,new_x};
         //select json by id
         //json->map (util)
         //old_x,old_y,new_x,new_y와 map 으로 확률분포 계산(util)
         //계산 후 새로운 위치 (x,y) 값 reply_x,reply_y에 저장
         try {
 
-            PercentMapVO mapVO=percentMapService.getPercentMapByReplyId(reply_id);
-            int newpos[]=util.mapRefreshByNewPoint(pos,mapVO);
-            ReplyPosVO vo=new ReplyPosVO(newpos[0],newpos[1]);
+            int newpos[] = new int[2];
+            PercentMapVO percentMapVO = util.mapRefreshByNewPoint(pos,percentMapService.getPercentMapByReplyId(reply_id));
+            ReplyPosVO vo=new ReplyPosVO(percentMapVO.getNewpos()[0],percentMapVO.getNewpos()[1]);
             replyService.updateReplyPos(vo);
-
-            percentMapService.updateANDmapOrdering(mapVO);
+            percentMapService.updateANDmapOrdering(percentMapVO);
 
         }catch (Exception e){
             e.printStackTrace();

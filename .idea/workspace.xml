@@ -6,39 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a51a88a7-afee-419e-ad94-0531f66d9af8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/MyPageController.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/MyPageController.class" />
+    <list default="true" id="b65727f0-8c0c-4504-a10d-e6d3e62809eb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/PercentMapController.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/controller/PercentMapController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAO.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapService.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/PercentMapVO.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/domain/PercentMapVO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/PercentMapServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyService.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/service/ReplyServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/project/media_comment/util/PercentMapUtil.class" afterPath="$PROJECT_DIR$/target/classes/org/project/media_comment/util/PercentMapUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/MyPageController.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/MyPageController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/PercentMapController.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/controller/PercentMapController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAO.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/persistence/ReplyDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapService.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/PercentMapVO.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/domain/PercentMapVO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapServiceImpl.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/PercentMapServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyService.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyServiceImpl.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/service/ReplyServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/util/PercentMapUtil.class" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/org/project/media_comment/util/PercentMapUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapService.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyService.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/percentmapMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/percentmapMapper.xml" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/mappers/percentmapMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/play.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/play.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/video/play.jsp" afterPath="$PROJECT_DIR$/target/controller-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/video/play.jsp" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,32 +31,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PercentMapController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java">
+      <file leaf-file-name="PercentMapUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PercentMapService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="176">
+              <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,8 +46,8 @@
       <file leaf-file-name="PercentMapServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="380">
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,30 +55,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PercentMapUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
+      <file leaf-file-name="PercentMapController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="516">
+              <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="percentmapMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml">
+      <file leaf-file-name="PercentMapVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <marker date="1505644435708" expanded="true" signature="342:401" ph="select * fro... USERS" />
-                <marker date="1505644435708" expanded="true" signature="531:582" ph="select * fro... USERS" />
-                <marker date="1505644435708" expanded="true" signature="713:836" ph="INSERT INTO percentMap... " />
-                <marker date="1505644435708" expanded="true" signature="899:996" ph="UPDATE perce... " />
-                <marker date="1505644435708" expanded="true" signature="1056:1126" ph="INSERT INTO percentMap... " />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,6 +83,17 @@
       <find>json</find>
       <find>43</find>
       <find>3185</find>
+      <find>30</find>
+      <find>3166</find>
+      <find>reply_x</find>
+      <find>3126</find>
+      <find>0358</find>
+      <find>3149</find>
+      <find>1560</find>
+      <find>2450</find>
+      <find>3.2450</find>
+      <find>3.1655</find>
+      <find>jsonarraytodo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,19 +122,20 @@
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/ReplyPosVO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/replyMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/percentmapMapper.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/PercentMapDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/ReplyServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/ReplyDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/play.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java" />
       </list>
     </option>
   </component>
@@ -182,6 +151,11 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="401" />
+    <option name="width" value="1527" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -311,6 +285,63 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="mypage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="media_comment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="media_comment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -775,12 +806,12 @@
       <workItem from="1505043472984" duration="5690000" />
       <workItem from="1505631296991" duration="2215000" />
       <workItem from="1505634173106" duration="2091000" />
-      <workItem from="1505636400263" duration="7434000" />
+      <workItem from="1505636400263" duration="14760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21004000" />
+    <option name="totallyTimeSpent" value="28330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -804,7 +835,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.30242825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="29" width="1920" height="1001" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.30242825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="22" y="38" width="1897" height="991" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -834,13 +865,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/persistence/MypageDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -952,14 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -979,6 +995,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,6 +1017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,14 +1102,6 @@
             <marker date="1504419493960" expanded="true" signature="621:734" ph="INSERT INTO users... " />
             <marker date="1504419493960" expanded="true" signature="865:926" ph="SELECT count... users" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1228,7 @@
         <state relative-caret-position="252">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding>
-            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1228,26 +1238,6 @@
         <state relative-caret-position="90">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1273,19 +1263,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="522">
+          <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/play.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="350" column="107" lean-forward="false" selection-start-line="350" selection-start-column="100" selection-end-line="350" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/domain/PercentMapVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/controller/PercentMapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/service/PercentMapServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/project/media_comment/util/PercentMapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
